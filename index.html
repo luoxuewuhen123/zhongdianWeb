@@ -1111,7 +1111,7 @@
 
         /* ===== Responsive ===== */
         @media (max-width: 1024px) {
-            .about-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .pain-grid { grid-template-columns: 1fr 1fr; }
             .product-grid { grid-template-columns: 1fr 1fr; }
             .adv-grid { grid-template-columns: 1fr 1fr; }
@@ -1120,29 +1120,138 @@
             .contact-grid { grid-template-columns: 1fr; }
             .tech-showcase { grid-template-columns: 1fr; }
             .tech-item.full { grid-column: span 1; }
+            .tech-item .chart { min-height: 160px; }
+            .tech-item .chart img { max-height: 160px; }
             .site-grid { grid-template-columns: 1fr; }
-            .recruit-grid, .recruit-simple-grid { grid-template-columns: 1fr; }
+            .recruit-grid, .recruit-simple-grid { grid-template-columns: 1fr 1fr; }
+            .site-card img { height: 240px; }
+            .about-cards { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-            .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(10,22,40,0.98); flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start; }
+            /* 导航 */
+            .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(10,22,40,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 16px 24px 24px; gap: 4px; align-items: stretch; border-top: 1px solid rgba(255,255,255,0.06); }
             .nav-links.open { display: flex; }
+            .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.04); }
+            .nav-links a { display: block; padding: 14px 12px; font-size: 15px; border-radius: 8px; }
+            .nav-links a::after { display: none; }
+            .nav-links a:hover { background: rgba(255,255,255,0.05); }
+            .nav-cta { background: transparent; border-radius: 8px; color: rgba(255,255,255,0.75) !important; font-weight: 400 !important; padding: 14px 12px; text-align: left; margin-top: 0; border: none; }
+            .nav-cta:hover { background: rgba(255,255,255,0.05) !important; color: #fff !important; }
             .menu-toggle { display: flex; }
-            .hero-stats { flex-direction: column; gap: 20px; }
-            .pain-grid { grid-template-columns: 1fr; }
-            .product-grid { grid-template-columns: 1fr; }
-            .adv-grid { grid-template-columns: 1fr 1fr; }
-            .partner-logos { grid-template-columns: repeat(3, 1fr); }
-            .case-grid { grid-template-columns: 1fr; }
-            .impl-steps { grid-template-columns: 1fr; }
-            .coop-grid { grid-template-columns: 1fr; }
-            .recruit-grid, .recruit-simple-grid { grid-template-columns: 1fr; }
-            .about-cards { grid-template-columns: 1fr; }
-            section { padding: 60px 20px; }
-            .hero-content { padding: 100px 20px 60px; }
-            .footer-top { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-            .product-image { height: 180px; }
-            .site-card img { height: 220px; }
+            .nav-logo { font-size: 17px; }
+            .nav-logo span.sub { font-size: 11px; }
+
+            /* 首屏 */
+            .hero-content { padding: 100px 20px 50px; }
+            .hero h1 { font-size: 32px; letter-spacing: 2px; }
+            .hero .brand-line { font-size: 16px; letter-spacing: 3px; }
+            .hero p { font-size: 14px; margin-bottom: 28px; }
+            .hero-badge { font-size: 11px; padding: 4px 12px; }
+            .hero-actions .btn { flex: 1; justify-content: center; padding: 13px 20px; font-size: 14px; }
+            .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; padding-top: 28px; }
+            .hero-stat .num { font-size: 28px; }
+            .hero-stat .label { font-size: 11px; }
+
+            /* 通用 */
+            section { padding: 48px 16px; }
+            .section-title { font-size: 24px; }
+            .section-subtitle { font-size: 14px; margin-bottom: 32px; }
+
+            /* 关于我们 */
+            .about-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .about-card { padding: 20px 16px; }
+            .about-card .icon { font-size: 24px; }
+            .about-card h4 { font-size: 14px; }
+            .about-card p { font-size: 12px; }
+
+            /* 行业痛点 */
+            .pain-grid { grid-template-columns: 1fr; gap: 16px; }
+            .pain-card { padding: 24px 20px; }
+
+            /* 产品 */
+            .product-grid { grid-template-columns: 1fr; gap: 16px; }
+            .product-image { height: 200px; }
+            .product-body { padding: 18px 20px 22px; }
+            .product-card h4 { font-size: 16px; }
+
+            /* 技术优势 */
+            .adv-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .adv-card { padding: 20px 16px; }
+            .adv-card .icon { font-size: 28px; }
+            .adv-card h4 { font-size: 14px; }
+            .adv-card p { font-size: 12px; }
+            .tech-showcase { gap: 16px; margin-top: 36px; padding-top: 36px; }
+            .tech-item { padding: 16px; }
+            .tech-item .chart { min-height: 140px; padding: 12px; }
+            .tech-item .chart img { max-height: 140px; }
+            .tech-item h5 { font-size: 15px; }
+
+            /* 应用现场 */
+            .site-grid { grid-template-columns: 1fr; gap: 16px; }
+            .site-card img { height: 200px; }
+            .site-card-body { padding: 16px 20px; }
+            .site-card h4 { font-size: 16px; }
+            .site-card p { font-size: 13px; }
+
+            /* 合作伙伴 */
+            .partner-logos { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .partner-item { padding: 18px 12px; }
+            .partner-item .name { font-size: 12px; }
+
+            /* 标杆案例 */
+            .case-grid { grid-template-columns: 1fr; gap: 16px; }
+            .case-body { padding: 20px; }
+            .case-body h4 { font-size: 16px; }
+            .case-body p { font-size: 13px; }
+            .case-results { gap: 16px; }
+            .case-result-item .val { font-size: 18px; }
+
+            /* 实施路径 */
+            .impl-steps { grid-template-columns: 1fr; gap: 16px; }
+            .impl-step { padding: 24px 20px; }
+
+            /* 商务合作 */
+            .coop-grid { grid-template-columns: 1fr; gap: 16px; }
+            .coop-card { padding: 24px 20px; }
+
+            /* 招聘 */
+            .recruit-grid, .recruit-simple-grid { grid-template-columns: 1fr; gap: 16px; }
+            .recruit-simple-card { padding: 24px 20px; }
+            .recruit-salary-tag { font-size: 16px; }
+
+            /* 商业合作(联系方式) */
+            .contact-grid { gap: 32px; }
+            .contact-item { padding: 14px 16px; }
+
+            /* 页脚 */
+            .footer-top { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; gap: 6px; text-align: center; font-size: 12px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 26px; }
+            .hero .brand-line { font-size: 14px; }
+            .hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .hero-stat .num { font-size: 24px; }
+            .about-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .adv-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .partner-logos { grid-template-columns: repeat(2, 1fr); }
+            .product-image { height: 160px; }
+            .site-card img { height: 180px; }
+            .site-showcase { padding: 48px 16px; }
+            .contact-map { padding: 28px 20px; }
+            .contact-map img { width: 80px; }
+            .recruit-simple-card h4 { font-size: 15px; }
+            .tech-item .chart { min-height: 120px; }
+            .tech-item .chart img { max-height: 120px; }
+            section { padding: 36px 12px; }
+            .hero-content { padding: 90px 16px 40px; }
+            .nav-logo { font-size: 15px; }
+            .nav-logo img { width: 30px; height: 30px; }
+        }
+        @media (max-width: 380px) {
+            .about-cards, .adv-grid { grid-template-columns: 1fr; }
+            .hero-stats { grid-template-columns: 1fr 1fr; }
+            .partner-logos { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -1163,8 +1272,8 @@
             <li><a href="#products">产品中心</a></li>
             <li><a href="#advantages">技术优势</a></li>
             <li><a href="#sites">应用现场</a></li>
-            <li><a href="#partners">合作伙伴</a></li>
-            <li><a href="#recruitment">官方招聘</a></li>
+            <li><a href="#cases">标杆案例</a></li>
+            <li><a href="recruit.html">官方招聘</a></li>
             <li><a href="#contact" class="nav-cta">商业合作</a></li>
         </ul>
         <button class="menu-toggle" id="menuToggle" aria-label="菜单">
@@ -1486,59 +1595,6 @@
     </div>
 </section>
 
-<!-- ===== PARTNERS ===== -->
-<section class="partners" id="partners">
-    <div class="section-inner">
-        <div class="fade-in">
-            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">PARTNERS</span>
-            <h2 class="section-title">信赖我们的行业领导者</h2>
-            <p class="section-subtitle">解决方案已在电力、风电、光热等多个领域落地验证，成功服务多家行业头部领军企业</p>
-        </div>
-        <div class="partner-logos fade-in">
-            <div class="partner-item">
-                <div class="name">国家能源集团</div>
-                <div class="desc">全球领先综合能源集团</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">大唐集团</div>
-                <div class="desc">世界500强能源央企</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">国家电投</div>
-                <div class="desc">全球最大光伏发电企业</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">华能集团</div>
-                <div class="desc">国务院直管特大型央企</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">京能集团</div>
-                <div class="desc">大型国有能源集团</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">鲁能集团</div>
-                <div class="desc">大型国有综合性企业集团</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">中国绿发</div>
-                <div class="desc">国家绿色能源与低碳发展</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">明阳智能</div>
-                <div class="desc">全球知名新能源集团</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">东方电气</div>
-                <div class="desc">能源装备制造领军企业</div>
-            </div>
-            <div class="partner-item">
-                <div class="name">更多合作伙伴</div>
-                <div class="desc">持续扩展中...</div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ===== CASES ===== -->
 <section class="cases" id="cases">
     <div class="section-inner">
@@ -1594,46 +1650,6 @@
     </div>
 </section>
 
-<!-- ===== COOPERATION ===== -->
-<section class="cooperation" id="cooperation">
-    <div class="section-inner">
-        <div class="fade-in">
-            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">COOPERATION</span>
-            <h2 class="section-title">商务合作模式</h2>
-            <p class="section-subtitle">以客户需求为核心，构建"销售灵活化、交付标准化、服务一体化"的合作体系</p>
-        </div>
-        <div class="coop-grid">
-            <div class="coop-card fade-in">
-                <span class="icon">💼</span>
-                <h4>多元销售模式</h4>
-                <ul>
-                    <li><strong>设备销售</strong> — 一次性买断，终身技术咨询与软件升级</li>
-                    <li><strong>灵活租赁</strong> — 短期项目、阶段性需求，降低前期投入</li>
-                    <li><strong>现场服务</strong> — 按需净化处理及油品调质服务</li>
-                </ul>
-            </div>
-            <div class="coop-card fade-in">
-                <span class="icon">⏱️</span>
-                <h4>高效交付周期</h4>
-                <ul>
-                    <li><strong>标准产品</strong> — 常备现货，下单即发货，4~6周完成交付</li>
-                    <li><strong>定制开发</strong> — 方案确认后8~12周落地，严格把控节点</li>
-                    <li><strong>快速部署</strong> — 满足紧急项目与快速部署需求</li>
-                </ul>
-            </div>
-            <div class="coop-card fade-in">
-                <span class="icon">🛡️</span>
-                <h4>全维售后保障</h4>
-                <ul>
-                    <li><strong>整机2年质保</strong> — 核心零部件终身成本价维修</li>
-                    <li><strong>7×24小时远程诊断</strong> — 定期上门巡检，易损件提前预警更换</li>
-                    <li><strong>全生命周期服务</strong> — 建立设备档案，确保高效运转</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ===== IMPLEMENTATION ===== -->
 <section class="impl" id="impl">
     <div class="section-inner">
@@ -1665,45 +1681,7 @@
     </div>
 </section>
 
-<section class="recruitment" id="recruitment">
-    <div class="section-inner">
-        <div class="fade-in">
-            <span class="section-tag">JOIN US</span>
-            <h2 class="section-title">加入中电智为</h2>
-            <p class="section-subtitle">与我们一起，推动工业智能运维新时代</p>
-        </div>
-        <div class="recruit-simple-grid">
-            <a href="recruit.html" class="recruit-simple-card fade-in">
-                <div class="recruit-salary-tag">6-9K</div>
-                <h4>全栈工程师</h4>
-                <p>昆明 · 本科 · 1-3年</p>
-                <span class="recruit-link">查看详情 →</span>
-            </a>
-            <a href="recruit.html" class="recruit-simple-card fade-in">
-                <div class="recruit-salary-tag">5-9K</div>
-                <h4>电气设备维修工程师</h4>
-                <p>昆明 · 大专 · 1-3年</p>
-                <span class="recruit-link">查看详情 →</span>
-            </a>
-            <a href="recruit.html" class="recruit-simple-card fade-in">
-                <div class="recruit-salary-tag">6-10K</div>
-                <h4>风电滤油设备安装与维护工程师</h4>
-                <p>昆明 · 中专/中技 · 1-3年</p>
-                <span class="recruit-link">查看详情 →</span>
-            </a>
-            <a href="recruit.html" class="recruit-simple-card fade-in">
-                <div class="recruit-salary-tag">5-9K</div>
-                <h4>网络工程师</h4>
-                <p>昆明 · 本科 · 1-3年</p>
-                <span class="recruit-link">查看详情 →</span>
-            </a>
-        </div>
-        <div class="recruit-cta fade-in">
-            <p>将您的简历发送至：<a href="mailto:hr@zhongdianzhiwei.com" class="email-link">hr@zhongdianzhiwei.com</a></p>
-            <p style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.5);">查看详细岗位要求请点击对应岗位卡片</p>
-        </div>
-    </div>
-</section>
+<!-- ===== RECRUITMENT ===== (已移至独立页面 recruit.html) -->
 
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="contact">
@@ -1760,6 +1738,99 @@
     </div>
 </section>
 
+<!-- ===== COOPERATION ===== -->
+<section class="cooperation" id="cooperation">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">COOPERATION</span>
+            <h2 class="section-title">商务合作模式</h2>
+            <p class="section-subtitle">以客户需求为核心，构建"销售灵活化、交付标准化、服务一体化"的合作体系</p>
+        </div>
+        <div class="coop-grid">
+            <div class="coop-card fade-in">
+                <span class="icon">💼</span>
+                <h4>多元销售模式</h4>
+                <ul>
+                    <li><strong>设备销售</strong> — 一次性买断，终身技术咨询与软件升级</li>
+                    <li><strong>灵活租赁</strong> — 短期项目、阶段性需求，降低前期投入</li>
+                    <li><strong>现场服务</strong> — 按需净化处理及油品调质服务</li>
+                </ul>
+            </div>
+            <div class="coop-card fade-in">
+                <span class="icon">⏱️</span>
+                <h4>高效交付周期</h4>
+                <ul>
+                    <li><strong>标准产品</strong> — 常备现货，下单即发货，4~6周完成交付</li>
+                    <li><strong>定制开发</strong> — 方案确认后8~12周落地，严格把控节点</li>
+                    <li><strong>快速部署</strong> — 满足紧急项目与快速部署需求</li>
+                </ul>
+            </div>
+            <div class="coop-card fade-in">
+                <span class="icon">🛡️</span>
+                <h4>全维售后保障</h4>
+                <ul>
+                    <li><strong>整机2年质保</strong> — 核心零部件终身成本价维修</li>
+                    <li><strong>7×24小时远程诊断</strong> — 定期上门巡检，易损件提前预警更换</li>
+                    <li><strong>全生命周期服务</strong> — 建立设备档案，确保高效运转</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners" id="partners">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">PARTNERS</span>
+            <h2 class="section-title">信赖我们的行业领导者</h2>
+            <p class="section-subtitle">解决方案已在电力、风电、光热等多个领域落地验证，成功服务多家行业头部领军企业</p>
+        </div>
+        <div class="partner-logos fade-in">
+            <div class="partner-item">
+                <div class="name">国家能源集团</div>
+                <div class="desc">全球领先综合能源集团</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">大唐集团</div>
+                <div class="desc">世界500强能源央企</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">国家电投</div>
+                <div class="desc">全球最大光伏发电企业</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">华能集团</div>
+                <div class="desc">国务院直管特大型央企</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">京能集团</div>
+                <div class="desc">大型国有能源集团</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">鲁能集团</div>
+                <div class="desc">大型国有综合性企业集团</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">中国绿发</div>
+                <div class="desc">国家绿色能源与低碳发展</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">明阳智能</div>
+                <div class="desc">全球知名新能源集团</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">东方电气</div>
+                <div class="desc">能源装备制造领军企业</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">更多合作伙伴</div>
+                <div class="desc">持续扩展中...</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
     <div class="footer-inner">
@@ -1776,7 +1847,7 @@
                     <li><a href="#products">产品中心</a></li>
                     <li><a href="#advantages">技术优势</a></li>
                     <li><a href="#partners">合作伙伴</a></li>
-                    <li><a href="#recruitment">官方招聘</a></li>
+                    <li><a href="recruit.html">官方招聘</a></li>
                     <li><a href="#contact">商业合作</a></li>
                 </ul>
             </div>
@@ -1794,7 +1865,7 @@
                 <ul>
                     <li><a href="#contact">电话：010-XXXX-XXXX</a></li>
                     <li><a href="#contact">合作邮箱：cooperation@zhongdianzhiwei.com</a></li>
-                    <li><a href="#recruitment">招聘邮箱：hr@zhongdianzhiwei.com</a></li>
+                    <li><a href="recruit.html">招聘邮箱：hr@zhongdianzhiwei.com</a></li>
                     <li><a href="#contact">地址：北京市</a></li>
                 </ul>
             </div>
