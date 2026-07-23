@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中电智为（北京）科技有限公司 | 百捷通 · 工业智能运维</title>
     <meta name="description" content="中电智为——百捷通工业智能运维，专注于工业设备全生命周期智能运维解决方案，助力新能源行业落地无人值守远程智能化运维。">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="preload" href="images/hero-wind.jpg" as="image" fetchpriority="high">
     <style>
         /* ===== Reset & Base ===== */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -381,7 +383,7 @@
         .about-card p { font-size: 13px; color: var(--text-light); }
 
         /* ===== Pain Points ===== */
-        .painpoints { background: #fff; }
+        .painpoints { background: #fff; content-visibility: auto; contain-intrinsic-size: 400px; }
         .pain-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -413,7 +415,7 @@
         .pain-card p { font-size: 14px; color: var(--text-light); line-height: 1.8; }
 
         /* ===== Products ===== */
-        .products { background: var(--bg-dark); position: relative; }
+        .products { background: var(--bg-dark); position: relative; content-visibility: auto; contain-intrinsic-size: 600px; }
         .products::before {
             content: '';
             position: absolute;
@@ -560,7 +562,7 @@
         }
 
         /* ===== Advantages / Tech ===== */
-        .advantages { background: var(--bg-light); }
+        .advantages { background: var(--bg-light); content-visibility: auto; contain-intrinsic-size: 600px; }
         .adv-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -628,7 +630,7 @@
         .tech-item.full .chart img { max-height: 280px; }
 
         /* ===== Site Showcase ===== */
-        .site-showcase {
+        .site-showcase { content-visibility: auto; contain-intrinsic-size: 500px;
             background: var(--bg-dark);
             padding: 80px 24px;
             position: relative;
@@ -674,7 +676,7 @@
         .site-card p { color: rgba(255,255,255,0.6); font-size: 14px; }
 
         /* ===== Partners ===== */
-        .partners { background: #fff; }
+        .partners { background: #fff; content-visibility: auto; contain-intrinsic-size: 400px; }
         .partner-logos {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -707,7 +709,7 @@
         }
 
         /* ===== Cases ===== */
-        .cases { background: var(--bg-light); }
+        .cases { background: var(--bg-light); content-visibility: auto; contain-intrinsic-size: 400px; }
         .case-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -753,7 +755,7 @@
         }
 
         /* ===== Implementation ===== */
-        .impl { background: #fff; }
+        .impl { background: #fff; content-visibility: auto; contain-intrinsic-size: 400px; }
         .impl-steps {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -991,7 +993,7 @@
         }
 
         /* ===== Contact ===== */
-        .contact { background: var(--bg-light); }
+        .contact { background: var(--bg-light); content-visibility: auto; contain-intrinsic-size: 500px; }
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1389,8 +1391,6 @@
         </div>
     </div>
 </section>
-    </div>
-</section>
 
 <!-- ===== PRODUCTS ===== -->
 <section class="products" id="products">
@@ -1403,7 +1403,7 @@
         <div class="product-grid">
             <div class="product-card fade-in">
                 <div class="product-image">
-                    <img src="images/product-cabinet.jpg" alt="精过滤系统">
+                    <img src="images/product-cabinet.jpg" alt="精过滤系统" loading="lazy">
                 </div>
                 <div class="product-body">
                     <h4>精过滤系统</h4>
@@ -1417,7 +1417,7 @@
             </div>
             <div class="product-card fade-in">
                 <div class="product-image">
-                    <img src="images/product-tall.jpg" alt="高精度滤油机">
+                    <img src="images/product-tall.jpg" alt="高精度滤油机" loading="lazy">
                 </div>
                 <div class="product-body">
                     <h4>高精度滤油机</h4>
@@ -1445,7 +1445,7 @@
             </div>
             <div class="product-card fade-in">
                 <div class="product-image">
-                    <img src="images/product-gearbox.jpeg" alt="风机齿轮箱">
+                    <img src="images/product-gearbox.jpeg" alt="风机齿轮箱" loading="lazy">
                 </div>
                 <div class="product-body">
                     <h4>高次谐波传动链诊断系统</h4>
@@ -1526,7 +1526,7 @@
                 <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
                 <h5>油品水分含量与轴承寿命关系</h5>
                 <div class="chart">
-                    <img src="images/tech-water-chart.jpg" alt="水分含量与轴承寿命对照表">
+                    <img src="images/tech-water-chart.jpg" alt="水分含量与轴承寿命对照表" loading="lazy">
                 </div>
                 <p>水分含量从 500ppm 降至 50ppm，轴承寿命可延长 3 倍以上（数据来源：Timken铁姆肯轴承实测）</p>
             </div>
@@ -1558,7 +1558,7 @@
                 <div class="label">系统流程 · SYSTEM FLOW</div>
                 <h5>风机齿轮箱智能运维系统油路</h5>
                 <div class="chart">
-                    <img src="images/tech-oil-diagram.png" alt="风机齿轮箱智能运维系统油路图">
+                    <img src="images/tech-oil-diagram.png" alt="风机齿轮箱智能运维系统油路图" loading="lazy">
                 </div>
                 <p>实时监测风机齿轮箱油液状态，结合 AI 算法实现设备健康评估与预测性维护</p>
             </div>
@@ -1717,7 +1717,7 @@
                 </div>
             </div>
             <div class="contact-map fade-in">
-                <img src="images/logo-beesolon.png" alt="百捷通 Beesolon 商标">
+                <img src="images/logo-beesolon.png" alt="百捷通 Beesolon 商标" loading="lazy">
                 <h4>百捷通 · Beesolon</h4>
                 <p>® 注册商标 · 工业智能运维品牌</p>
                 <p style="margin-top:16px;">品质源于专注，性能源于创新</p>
