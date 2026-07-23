@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>官方招聘 - 中电智为（北京）科技有限公司</title>
+    <meta name="description" content="中电智为官方招聘信息，包含全栈工程师、电气设备维修工程师、风电滤油设备安装与维护工程师、网络工程师等岗位。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            background: #0a1628;
+            line-height: 1.7;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        :root {
+            --accent: #00a8a8;
+            --accent-light: #00d4d4;
+            --radius: 16px;
+        }
+
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0d2b45 100%);
+            padding: 40px 24px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .page-header h1 {
+            color: #fff;
+            font-size: clamp(28px, 3vw, 38px);
+            margin-bottom: 8px;
+        }
+        .page-header p { color: rgba(255,255,255,0.6); font-size: 15px; }
+        .page-header .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--accent-light);
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .page-header .back-link:hover { opacity: 1; }
+
+        /* Content */
+        .page-content {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        .job-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            margin-bottom: 28px;
+            transition: all 0.3s;
+        }
+        .job-card:hover { border-color: rgba(0,168,168,0.25); }
+        .job-head {
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .job-head h3 { color: #fff; font-size: 22px; margin-bottom: 12px; }
+        .job-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        .job-tag {
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+        }
+        .job-salary {
+            padding: 4px 12px;
+            background: linear-gradient(135deg, rgba(0,168,168,0.25), rgba(0,212,212,0.15));
+            border: 1px solid rgba(0,168,168,0.3);
+            border-radius: 6px;
+            font-size: 15px;
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+        .job-section { margin-bottom: 20px; }
+        .job-section:last-child { margin-bottom: 0; }
+        .job-section h5 {
+            color: var(--accent-light);
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 3px solid var(--accent);
+        }
+        .job-section ul { list-style: none; }
+        .job-section ul li {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            padding: 5px 0 5px 18px;
+            position: relative;
+        }
+        .job-section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--accent);
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 40px 24px 60px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .page-footer p { color: rgba(255,255,255,0.5); font-size: 14px; }
+        .page-footer .email {
+            color: var(--accent-light);
+            font-weight: 500;
+            border-bottom: 1px dashed var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .page-content { padding: 40px 16px; }
+            .job-card { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>官方招聘</h1>
+        <p>中电智为（北京）科技有限公司 · 百捷通 Beesolon</p>
+        <a href="index.html" class="back-link">← 返回首页</a>
+    </div>
+
+    <div class="page-content">
+        <!-- 全栈工程师 -->
+        <div class="job-card">
+            <div class="job-head">
+                <h3>全栈工程师</h3>
+                <div class="job-meta">
+                    <span class="job-tag">📍 昆明</span>
+                    <span class="job-salary">6-9K</span>
+                    <span class="job-tag">1-3年</span>
+                    <span class="job-tag">本科</span>
+                </div>
+            </div>
+            <div class="job-section">
+                <h5>岗位职责</h5>
+                <ul>
+                    <li>负责AI相关软件的设计、开发与优化，基于业务需求构建AI模型及应用系统，涵盖模型选型、开发、调参、部署全流程</li>
+                    <li>基于开源知识库（如FAISS、Milvus）、Agent框架（如LangChain）进行二次开发，优化大模型应用性能</li>
+                    <li>负责机器学习、深度学习模型的训练与优化，使用TensorFlow、PyTorch等深度学习框架；开展Prompt工程、RAG（检索增强生成）相关工作</li>
+                    <li>设计并开发AI服务API接口，构建高可用、低延迟的分布式AI服务架构</li>
+                    <li>参与项目需求分析、技术方案设计，推动AI项目落地实施；跟踪AI领域前沿技术（如多模态、大模型微调等）</li>
+                    <li>撰写技术文档，包括需求文档、设计文档、测试文档、运维文档等；负责AI系统日常运维</li>
+                </ul>
+            </div>
+            <div class="job-section">
+                <h5>任职要求</h5>
+                <ul>
+                    <li>本科及以上学历，计算机科学、人工智能、软件工程、数学等相关专业，1-3年及以上AI开发经验</li>
+                    <li>精通Python编程，熟悉TensorFlow、PyTorch等至少一种深度学习框架</li>
+                    <li>熟悉大模型（LLM）原理，有AI Agent、RAG相关开发经验，掌握LoRA、SFT等微调技术者优先</li>
+                    <li>熟悉MySQL、PostgreSQL等关系型数据库及MongoDB、Redis等NoSQL数据库</li>
+                    <li>熟悉云服务平台（阿里云、AWS等）及容器化技术（Docker、K8s）</li>
+                    <li>有NLP或CV项目经验，或熟悉LangChain、Dify等AI开发框架者优先</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 电气设备维修工程师 -->
+        <div class="job-card">
+            <div class="job-head">
+                <h3>电气设备维修工程师</h3>
+                <div class="job-meta">
+                    <span class="job-tag">📍 昆明</span>
+                    <span class="job-salary">5-9K</span>
+                    <span class="job-tag">1-3年</span>
+                    <span class="job-tag">大专</span>
+                </div>
+            </div>
+            <div class="job-section">
+                <h5>岗位职责</h5>
+                <ul>
+                    <li>负责公司及合作单位电气设备的日常巡检、维护与故障维修，重点精通电力变压器、高低压开关的维修技巧</li>
+                    <li>对电力变压器（油浸式、干式）进行定期维护、油样检测、绝缘测试、状态检修及故障排查</li>
+                    <li>负责高低压开关（断路器、隔离开关、负荷开关等）的安装、调试、维修与保养，快速排查并解决开关拒动、误动、接触不良等故障</li>
+                    <li>制定电气设备定期维护计划，做好维护、维修记录，建立完善的设备台账</li>
+                    <li>严格遵守电气安全操作规程，落实安全防护措施，开展电气设备安全检查</li>
+                    <li>配合团队完成电气设备升级、改造项目，提供技术支持；负责电气维修工具、耗材的管理与申领</li>
+                </ul>
+            </div>
+            <div class="job-section">
+                <h5>任职要求</h5>
+                <ul>
+                    <li>大专及以上学历，电气工程、电气自动化、电力工程等相关专业，1-3年及以上电气设备维修经验</li>
+                    <li>熟悉电力变压器、高低压开关的结构原理、维修技巧及维护标准</li>
+                    <li>掌握电气设备绝缘测试、耐压试验、接地电阻测试等常用检测方法</li>
+                    <li>熟悉电气安全规范及相关行业标准，具备较强的安全意识和应急处理能力</li>
+                    <li>具备良好的动手能力、问题排查能力和沟通协调能力</li>
+                    <li>持有电工证、高压电工证等相关资格证书者优先；有风电、光伏等新能源领域维修经验者优先</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 风电滤油设备安装与维护工程师 -->
+        <div class="job-card">
+            <div class="job-head">
+                <h3>风电滤油设备安装与维护工程师</h3>
+                <div class="job-meta">
+                    <span class="job-tag">📍 昆明</span>
+                    <span class="job-salary">6-10K</span>
+                    <span class="job-tag">1-3年</span>
+                    <span class="job-tag">中专/中技</span>
+                </div>
+            </div>
+            <div class="job-section">
+                <h5>岗位职责</h5>
+                <ul>
+                    <li>负责风电滤油装置、润滑过滤系统、油冷却净化设备的现场安装、接线、调试与验收</li>
+                    <li>负责设备日常巡检、故障排查、滤芯更换、系统清洗、漏油处理等运维工作</li>
+                    <li>协助客户完成油液检测、系统保养、故障记录及运维报告填写</li>
+                    <li>配合销售与技术部，提供现场技术支持、操作培训及问题整改</li>
+                    <li>遵守风电场安全规范，落实高空、电气、动火等安全作业要求</li>
+                    <li>及时反馈现场问题，优化安装流程与维护方案</li>
+                </ul>
+            </div>
+            <div class="job-section">
+                <h5>任职要求</h5>
+                <ul>
+                    <li>机电一体化、机械、电气、风电运维等相关专业，中专及以上学历</li>
+                    <li>有风电设备运维、滤油机/过滤设备安装维修、液压/润滑系统经验者优先</li>
+                    <li>熟悉基本电气接线、液压管路装配，能看懂机械/电气图纸</li>
+                    <li>能适应长期出差/驻场，吃苦耐劳，动手能力强，责任心强</li>
+                    <li>必须持有电工证、高空作业证</li>
+                    <li>有驾驶证会开车者优先录用</li>
+                    <li>良好的沟通能力，能独立对接风电业主与运维人员</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 网络工程师 -->
+        <div class="job-card">
+            <div class="job-head">
+                <h3>网络工程师</h3>
+                <div class="job-meta">
+                    <span class="job-tag">📍 昆明</span>
+                    <span class="job-salary">5-9K</span>
+                    <span class="job-tag">1-3年</span>
+                    <span class="job-tag">本科</span>
+                </div>
+            </div>
+            <div class="job-section">
+                <h5>岗位职责</h5>
+                <ul>
+                    <li>负责公司网络架构的整体规划、设计与持续优化，涵盖LAN、WAN、WIFI、VPN、DNS、DHCP等关键系统</li>
+                    <li>统筹网络基础设备的部署、配置、调试与日常运维，包括路由器、交换机、防火墙等主流厂家设备（华为、锐捷、深信服等）</li>
+                    <li>负责网络安全体系的建设与维护，部署网络安全防护措施，管理防火墙、入侵检测系统等安全设备</li>
+                    <li>定期评估网络性能，分析网络瓶颈，制定优化方案；快速排查并解决网络故障</li>
+                    <li>负责编制并维护网络相关技术文档，包括网络拓扑图、IP规划、设备配置手册等</li>
+                    <li>参与公司信息化项目的网络相关实施工作；跟踪网络技术前沿，推动网络架构升级与智能化运维</li>
+                </ul>
+            </div>
+            <div class="job-section">
+                <h5>任职要求</h5>
+                <ul>
+                    <li>本科及以上学历，计算机科学与技术、网络工程、信息安全等相关专业，1-3年及以上网络工程师经验</li>
+                    <li>熟悉TCP/IP协议，精通局域网、广域网、无线网络的规划与运维</li>
+                    <li>熟练配置华为、锐捷、深信服等主流厂家的网络设备，具备防火墙、VPN、上网行为管理配置经验</li>
+                    <li>具备网络安全防护意识，熟悉常见网络攻击手段及防御方法</li>
+                    <li>具备良好的问题排查能力和沟通协调能力，能独立处理复杂网络故障</li>
+                    <li>持有CCNA、CCNP、HCIA等网络相关认证者优先；有政企类网络项目实施经验者优先</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <p>将您的简历发送至：<a href="mailto:hr@zhongdianzhiwei.com" class="email">hr@zhongdianzhiwei.com</a></p>
+        <p style="margin-top:6px;font-size:13px;">中电智为（北京）科技有限公司 期待您的加入</p>
+    </div>
+</body>
+</html>

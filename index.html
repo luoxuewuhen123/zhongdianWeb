@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中电智为（北京）科技有限公司 | 百捷通 · 工业智能运维</title>
+    <meta name="description" content="中电智为——百捷通工业智能运维，专注于工业设备全生命周期智能运维解决方案，助力新能源行业落地无人值守远程智能化运维。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            background: #ffffff;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* ===== Color Variables ===== */
+        :root {
+            --primary: #0a1628;
+            --primary-light: #132244;
+            --accent: #00a8a8;
+            --accent-light: #00d4d4;
+            --accent-dark: #008080;
+            --gold: #c9a84c;
+            --gold-light: #e8d48b;
+            --text: #1a1a2e;
+            --text-light: #5a6a7a;
+            --text-white: #f0f4f8;
+            --bg-dark: #0a1628;
+            --bg-light: #f5f7fa;
+            --bg-card: #ffffff;
+            --gradient-main: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0d2b45 100%);
+            --gradient-accent: linear-gradient(135deg, #00a8a8, #00d4d4);
+            --shadow-sm: 0 2px 12px rgba(10,22,40,0.08);
+            --shadow-md: 0 8px 32px rgba(10,22,40,0.12);
+            --shadow-lg: 0 16px 48px rgba(10,22,40,0.18);
+            --radius: 16px;
+        }
+
+        /* ===== Typography ===== */
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.3; }
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .section-subtitle {
+            font-size: clamp(14px, 1.5vw, 18px);
+            color: var(--text-light);
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 60px;
+            font-weight: 300;
+        }
+        .section-tag {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+            padding: 4px 16px;
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10,22,40,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled { background: rgba(10,22,40,0.98); }
+        .nav-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .nav-logo img { width: 36px; height: 36px; object-fit: contain; border-radius: 8px; }
+        .nav-logo span.sub { font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); display: block; margin-top: -2px; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.75);
+            font-weight: 400;
+            transition: color 0.3s;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover { color: #fff; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            padding: 8px 24px;
+            background: var(--gradient-accent);
+            border-radius: 6px;
+            color: #fff !important;
+            font-weight: 500 !important;
+        }
+        .nav-cta::after { display: none !important; }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-main);
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('images/hero-wind.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 600px 400px at 20% 30%, rgba(0,168,168,0.25), transparent),
+                radial-gradient(ellipse 500px 500px at 80% 70%, rgba(201,168,76,0.1), transparent);
+            z-index: 1;
+        }
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(0,168,168,0.4);
+            border-radius: 50%;
+            animation: float-particle linear infinite;
+        }
+        @keyframes float-particle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0,168,168,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,168,168,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+            width: 100%;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(0,168,168,0.15);
+            border: 1px solid rgba(0,168,168,0.3);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--accent-light);
+            margin-bottom: 32px;
+            letter-spacing: 2px;
+        }
+        .hero-badge::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .hero h1 {
+            font-size: clamp(36px, 5.5vw, 64px);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 12px;
+            letter-spacing: 4px;
+        }
+        .hero h1 .highlight {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .brand-line {
+            font-size: clamp(20px, 2.5vw, 32px);
+            color: var(--gold-light);
+            font-weight: 500;
+            margin-bottom: 16px;
+            letter-spacing: 6px;
+        }
+        .hero p {
+            font-size: clamp(15px, 1.3vw, 18px);
+            color: rgba(255,255,255,0.7);
+            max-width: 640px;
+            font-weight: 300;
+            line-height: 1.9;
+            margin-bottom: 40px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 36px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            letter-spacing: 1px;
+        }
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(0,168,168,0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,168,168,0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255,255,255,0.3);
+        }
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background: rgba(0,168,168,0.1);
+            transform: translateY(-2px);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-stat { text-align: left; }
+        .hero-stat .num {
+            font-size: clamp(32px, 3vw, 48px);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+        .hero-stat .num .accent-text { color: var(--accent-light); }
+        .hero-stat .label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== Section Base ===== */
+        section { padding: 100px 24px; }
+        .section-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* ===== About ===== */
+        .about { background: var(--bg-light); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text h2 {
+            font-size: clamp(26px, 3vw, 36px);
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        .about-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .about-card {
+            background: #fff;
+            padding: 28px 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s;
+            border-top: 3px solid transparent;
+        }
+        .about-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-top-color: var(--accent);
+        }
+        .about-card .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .about-card h4 { font-size: 16px; margin-bottom: 6px; }
+        .about-card p { font-size: 13px; color: var(--text-light); }
+
+        /* ===== Pain Points ===== */
+        .painpoints { background: #fff; }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .pain-card {
+            background: var(--bg-light);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .pain-card:hover::before { opacity: 1; }
+        .pain-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .pain-card .icon { font-size: 36px; margin-bottom: 16px; display: block; }
+        .pain-card h4 { font-size: 18px; margin-bottom: 10px; }
+        .pain-card p { font-size: 14px; color: var(--text-light); line-height: 1.8; }
+
+        /* ===== Products ===== */
+        .products { background: var(--bg-dark); position: relative; }
+        .products::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 800px 500px at 30% 50%, rgba(0,168,168,0.05), transparent);
+        }
+        .products .section-title { color: #fff; }
+        .products .section-subtitle { color: rgba(255,255,255,0.6); }
+        .products .section-tag { border-color: var(--accent); color: var(--accent-light); }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .product-card {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all 0.4s;
+        }
+        .product-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(0,168,168,0.3);
+            transform: translateY(-6px);
+        }
+        .product-card .icon-wrap {
+            width: 56px;
+            height: 56px;
+            background: rgba(0,168,168,0.15);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #1a3a5c, #0d2b45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0,168,168,0.15), transparent 70%);
+        }
+        .product-image img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+            transition: transform 0.4s;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+        }
+        .product-card:hover .product-image img { transform: scale(1.05); }
+        .product-image img:active { transform: scale(0.95); }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: lightboxIn 0.3s ease;
+        }
+        @keyframes lightboxIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            color: #fff;
+            font-size: 36px;
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: background 0.3s;
+            border: none;
+        }
+        .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+        .lightbox-caption {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .product-body { padding: 24px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+        .product-card { display: flex; flex-direction: column; padding: 0; }
+        .product-card h4 { color: #fff; font-size: 19px; margin-bottom: 10px; }
+        .product-card p { color: rgba(255,255,255,0.65); font-size: 14px; line-height: 1.8; }
+        .product-features {
+            list-style: none;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .product-features li {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+        .product-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* ===== Advantages / Tech ===== */
+        .advantages { background: var(--bg-light); }
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .adv-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s;
+        }
+        .adv-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .adv-card .icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .adv-card h4 { font-size: 17px; margin-bottom: 8px; }
+        .adv-card p { font-size: 13px; color: var(--text-light); }
+
+        /* Tech Showcase */
+        .tech-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+        .tech-item {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s;
+        }
+        .tech-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .tech-item .label {
+            font-size: 12px;
+            color: var(--accent-dark);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .tech-item h5 {
+            font-size: 17px;
+            margin-bottom: 14px;
+            color: var(--primary);
+        }
+        .tech-item .chart {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+        .tech-item .chart img { max-width: 100%; max-height: 200px; object-fit: contain; }
+        .tech-item p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+        .tech-item.full { grid-column: span 2; }
+        .tech-item.full .chart img { max-height: 280px; }
+
+        /* ===== Site Showcase ===== */
+        .site-showcase {
+            background: var(--bg-dark);
+            padding: 80px 24px;
+            position: relative;
+        }
+        .site-showcase::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 700px 400px at 50% 50%, rgba(0,168,168,0.06), transparent);
+        }
+        .site-showcase .section-title { color: #fff; }
+        .site-showcase .section-subtitle { color: rgba(255,255,255,0.6); }
+        .site-showcase .section-tag { border-color: var(--accent); color: var(--accent-light); }
+        .site-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        .site-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+        .site-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(0,168,168,0.3);
+            transform: translateY(-4px);
+        }
+        .site-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.4s;
+        }
+        .site-card:hover img { transform: scale(1.03); }
+        .site-card-body { padding: 24px 28px; }
+        .site-card h4 { color: #fff; font-size: 18px; margin-bottom: 8px; }
+        .site-card p { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+        /* ===== Partners ===== */
+        .partners { background: #fff; }
+        .partner-logos {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .partner-item {
+            padding: 28px 16px;
+            text-align: center;
+            border-radius: 12px;
+            background: var(--bg-light);
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+        .partner-item:hover {
+            border-color: var(--accent);
+            background: rgba(0,168,168,0.04);
+            transform: translateY(-2px);
+        }
+        .partner-item .name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .partner-item .desc {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Cases ===== */
+        .cases { background: var(--bg-light); }
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .case-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s;
+        }
+        .case-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .case-body { padding: 28px; }
+        .case-tag {
+            display: inline-block;
+            padding: 3px 12px;
+            background: rgba(0,168,168,0.1);
+            color: var(--accent-dark);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .case-body h4 { font-size: 18px; margin-bottom: 10px; }
+        .case-body p { font-size: 14px; color: var(--text-light); line-height: 1.8; }
+        .case-results {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+        .case-result-item { text-align: center; }
+        .case-result-item .val {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--accent-dark);
+        }
+        .case-result-item .lbl {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* ===== Implementation ===== */
+        .impl { background: #fff; }
+        .impl-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 40px;
+        }
+        .impl-step {
+            text-align: center;
+            padding: 36px 24px;
+            border-radius: var(--radius);
+            background: var(--bg-light);
+            position: relative;
+            transition: all 0.4s;
+        }
+        .impl-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .impl-step .step-num {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 900;
+            font-size: 20px;
+            margin: 0 auto 16px;
+        }
+        .impl-step h4 { font-size: 18px; margin-bottom: 8px; }
+        .impl-step p { font-size: 14px; color: var(--text-light); }
+        .impl-step .time {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 2px 12px;
+            background: rgba(0,168,168,0.1);
+            color: var(--accent-dark);
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* ===== Cooperation / Biz Model ===== */
+        .cooperation { background: var(--bg-light); }
+        .coop-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .coop-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s;
+        }
+        .coop-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .coop-card .icon { font-size: 36px; display: block; margin-bottom: 16px; }
+        .coop-card h4 { font-size: 18px; margin-bottom: 12px; }
+        .coop-card ul {
+            list-style: none;
+        }
+        .coop-card ul li {
+            font-size: 14px;
+            color: var(--text-light);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .coop-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ===== Recruitment ===== */
+        .recruitment { background: var(--bg-dark); position: relative; }
+        .recruitment::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 600px 400px at 70% 40%, rgba(0,168,168,0.05), transparent);
+        }
+        .recruitment .section-title { color: #fff; }
+        .recruitment .section-subtitle { color: rgba(255,255,255,0.6); }
+        .recruitment .section-tag { border-color: var(--accent); color: var(--accent-light); }
+        .recruit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .recruit-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            transition: all 0.4s;
+        }
+        .recruit-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(0,168,168,0.3);
+            transform: translateY(-4px);
+        }
+        .recruit-head {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .recruit-card h4 { color: #fff; font-size: 20px; margin-bottom: 12px; font-weight: 700; }
+        .recruit-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .recruit-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+        }
+        .recruit-salary {
+            display: inline-block;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, rgba(0,168,168,0.25), rgba(0,212,212,0.15));
+            border: 1px solid rgba(0,168,168,0.3);
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+        .recruit-section {
+            margin-bottom: 18px;
+        }
+        .recruit-section:last-child { margin-bottom: 0; }
+        .recruit-section h5 {
+            color: var(--accent-light);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            padding-left: 12px;
+            border-left: 3px solid var(--accent);
+        }
+        .recruit-section ul {
+            list-style: none;
+        }
+        .recruit-section ul li {
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            padding: 5px 0 5px 18px;
+            position: relative;
+        }
+        .recruit-section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--accent);
+        }
+
+        /* Simple recruit cards (index page) */
+        .recruit-simple-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .recruit-simple-card {
+            display: block;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.4s;
+            text-decoration: none;
+        }
+        .recruit-simple-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(0,168,168,0.3);
+            transform: translateY(-6px);
+        }
+        .recruit-salary-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, rgba(0,168,168,0.25), rgba(0,212,212,0.15));
+            border: 1px solid rgba(0,168,168,0.3);
+            border-radius: 20px;
+            font-size: 18px;
+            color: var(--accent-light);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .recruit-simple-card h4 {
+            color: #fff;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+        .recruit-simple-card p {
+            color: rgba(255,255,255,0.55);
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+        .recruit-link {
+            color: var(--accent-light);
+            font-size: 13px;
+            font-weight: 500;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .recruit-simple-card:hover .recruit-link { opacity: 1; }
+        .recruit-cta {
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .recruit-cta p {
+            color: rgba(255,255,255,0.7);
+            font-size: 15px;
+        }
+        .recruit-cta .email-link {
+            color: var(--accent-light);
+            font-weight: 500;
+            font-size: 18px;
+            border-bottom: 1px dashed var(--accent);
+        }
+
+        /* ===== Contact ===== */
+        .contact { background: var(--bg-light); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        .contact-info > p {
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+        .contact-item .icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(0,168,168,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .contact-item .info label {
+            font-size: 12px;
+            color: var(--text-light);
+            display: block;
+        }
+        .contact-item .info span {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .contact-map {
+            background: var(--bg-dark);
+            border-radius: var(--radius);
+            padding: 40px;
+            color: #fff;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: radial-gradient(circle at 20% 30%, rgba(0,168,168,0.1), transparent);
+        }
+        .contact-map img { width: 120px; margin-bottom: 16px; }
+        .contact-map h4 { font-size: 20px; margin-bottom: 8px; }
+        .contact-map p { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--primary);
+            padding: 48px 24px 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-brand img { width: 48px; margin-bottom: 12px; }
+        .footer-brand h4 { color: #fff; font-size: 18px; margin-bottom: 8px; }
+        .footer-brand p { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.7; }
+        .footer-col h5 {
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 8px; }
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+        .footer-col ul li a:hover { color: var(--accent-light); }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* ===== Animations ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .pain-grid { grid-template-columns: 1fr 1fr; }
+            .product-grid { grid-template-columns: 1fr 1fr; }
+            .adv-grid { grid-template-columns: 1fr 1fr; }
+            .partner-logos { grid-template-columns: repeat(4, 1fr); }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .tech-showcase { grid-template-columns: 1fr; }
+            .tech-item.full { grid-column: span 1; }
+            .site-grid { grid-template-columns: 1fr; }
+            .recruit-grid, .recruit-simple-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(10,22,40,0.98); flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start; }
+            .nav-links.open { display: flex; }
+            .menu-toggle { display: flex; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .product-grid { grid-template-columns: 1fr; }
+            .adv-grid { grid-template-columns: 1fr 1fr; }
+            .partner-logos { grid-template-columns: repeat(3, 1fr); }
+            .case-grid { grid-template-columns: 1fr; }
+            .impl-steps { grid-template-columns: 1fr; }
+            .coop-grid { grid-template-columns: 1fr; }
+            .recruit-grid, .recruit-simple-grid { grid-template-columns: 1fr; }
+            .about-cards { grid-template-columns: 1fr; }
+            section { padding: 60px 20px; }
+            .hero-content { padding: 100px 20px 60px; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+            .product-image { height: 180px; }
+            .site-card img { height: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+            <img src="images/logo.png" alt="中电智为">
+            <div>
+                中电智为
+                <span class="sub">百捷通 · 工业智能运维</span>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#products">产品中心</a></li>
+            <li><a href="#advantages">技术优势</a></li>
+            <li><a href="#sites">应用现场</a></li>
+            <li><a href="#partners">合作伙伴</a></li>
+            <li><a href="#recruitment">官方招聘</a></li>
+            <li><a href="#contact" class="nav-cta">商业合作</a></li>
+        </ul>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+        <div class="hero-badge">品质源于专注 · 性能源于创新</div>
+        <h1>
+            中电智为<br>
+            <span class="highlight">百捷通</span>工业智能运维
+        </h1>
+        <div class="brand-line">BEESOLON · INDUSTRIAL INTELLIGENT O&amp;M</div>
+        <p>
+            专注于工业设备全生命周期智能运维解决方案，<br>
+            以"过滤净化 + 油品监测 + 高次谐波传动链检测"与AI深度融合的三位一体技术，<br>
+            助力新能源行业落地无人值守远程智能化运维。
+        </p>
+        <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">探索产品 →</a>
+            <a href="#cooperation" class="btn btn-outline">商务合作</a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="num"><span class="accent-text">80</span>%</div>
+                <div class="label">齿轮箱故障源于油液污染</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num"><span class="accent-text">6.7</span>万</div>
+                <div class="label">单台风机年均节约成本</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num">&lt;<span class="accent-text">6</span>月</div>
+                <div class="label">预计投资回收期</div>
+            </div>
+            <div class="hero-stat">
+                <div class="num"><span class="accent-text">9</span>+</div>
+                <div class="label">行业头部合作伙伴</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+    <div class="section-inner">
+        <div class="about-grid">
+            <div class="about-text fade-in">
+                <span class="section-tag">ABOUT US</span>
+                <h2>中电智为（北京）科技有限公司</h2>
+                <p>
+                    中电智为（北京）科技有限公司，旗下品牌"百捷通（Beesolon）"，是一家专注于工业设备全生命周期智能运维解决方案的高新技术企业。公司以"过滤净化 + 油品监测 + 高次谐波传动链检测"与AI多维深度融合的三位一体智能运维技术为核心，深耕风电、光热等新能源领域。
+                </p>
+                <p>
+                    我们围绕独创的润滑系统"三平衡"理论，致力于破解非计划停机、隐性故障和高昂运维成本等行业核心痛点，助力客户实现从"被动维修"到"主动预防"、从"粗放运维"到"精准治理"的跨越，最终落地无人值守远程智能化运维。
+                </p>
+            </div>
+            <div class="about-cards fade-in">
+                <div class="about-card">
+                    <span class="icon">🔬</span>
+                    <h4>核心技术</h4>
+                    <p>过滤净化 + 油品监测 + 高次谐波传动链检测 + AI多维深度融合</p>
+                </div>
+                <div class="about-card">
+                    <span class="icon">⚙️</span>
+                    <h4>三平衡理论</h4>
+                    <p>独创污染物、添加剂、油膜三平衡体系，从根源破解润滑失效</p>
+                </div>
+                <div class="about-card">
+                    <span class="icon">📡</span>
+                    <h4>智能监测</h4>
+                    <p>7×24小时远程诊断，AI实时预警，变被动为主动</p>
+                </div>
+                <div class="about-card">
+                    <span class="icon">🌱</span>
+                    <h4>绿色低碳</h4>
+                    <p>延长设备寿命、减少资源浪费，助力碳中和目标</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PAIN POINTS ===== -->
+<section class="painpoints" id="painpoints">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">INDUSTRY CHALLENGES</span>
+            <h2 class="section-title">直面工业运维核心痛点</h2>
+            <p class="section-subtitle">深入剖析制约生产效率与经济效益的关键因素，探寻破局方向</p>
+        </div>
+        <div class="pain-grid">
+            <div class="pain-card fade-in">
+                <span class="icon">🛑</span>
+                <h4>非计划停机的"隐形杀手"</h4>
+                <p>风机齿轮箱故障占风机总停机时长的35%，单次大修费用高达158~314万元。80%的齿轮箱故障源于润滑油污染，传统粗放式运维无法预警。</p>
+            </div>
+            <div class="pain-card fade-in">
+                <span class="icon">⚡</span>
+                <h4>美式箱变的"安全顽疾"</h4>
+                <p>油务缺陷、本体故障、密封隐患、散热不良等多重问题叠加。油中颗粒污染严重（NAS 12级以上），底部游离水沉积多达数十公斤，传统滤油治标不治本。</p>
+            </div>
+            <div class="pain-card fade-in">
+                <span class="icon">🔄</span>
+                <h4>恶性循环的"运维困局"</h4>
+                <p>污染物消耗添加剂 → 油膜破损 → 金属直接摩擦 → 新生磨屑加剧污染 → 添加剂继续损耗，形成加速损伤闭环。传统运维陷入"重复滤油、反复超标"的死循环。</p>
+            </div>
+        </div>
+    </div>
+</section>
+    </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products" id="products">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag">PRODUCTS</span>
+            <h2 class="section-title">核心产品矩阵</h2>
+            <p class="section-subtitle">四大核心产品深度解析，覆盖工业设备全生命周期智能运维需求</p>
+        </div>
+        <div class="product-grid">
+            <div class="product-card fade-in">
+                <div class="product-image">
+                    <img src="images/product-cabinet.png" alt="精过滤系统">
+                </div>
+                <div class="product-body">
+                    <h4>精过滤系统</h4>
+                    <p>高精度多级过滤设备，集成真空脱水、脱气、除颗粒功能。覆盖便携式、集成柜式等多种形态，满足风电齿轮箱、箱变等场景的油液深度净化需求。</p>
+                    <ul class="product-features">
+                        <li>便携/柜式多种规格可选</li>
+                        <li>清洁度维持 NAS 5 级以内</li>
+                        <li>深度脱水至 25~100ppm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image">
+                    <img src="images/product-tall.jpg" alt="高精度滤油机">
+                </div>
+                <div class="product-body">
+                    <h4>高精度滤油机</h4>
+                    <p>配备精密过滤与真空脱水系统，高效去除油中固体颗粒、游离水和油泥，从根源改善油品质量。</p>
+                    <ul class="product-features">
+                        <li>高精度过滤 + 真空脱水</li>
+                        <li>深度脱水至 25~100ppm</li>
+                        <li>适用于油库及现场维护</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image">
+                    <img src="images/tech-control-panel.png" alt="AI智能诊断系统">
+                </div>
+                <div class="product-body">
+                    <h4>AI 智能诊断系统</h4>
+                    <p>基于多维数据融合与AI深度学习，实现设备状态实时监测、早期故障预警与智能诊断平台。</p>
+                    <ul class="product-features">
+                        <li>7×24小时实时在线监测</li>
+                        <li>AI 模型持续优化迭代</li>
+                        <li>早期异常预警，避免重大事故</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image">
+                    <img src="images/product-gearbox.jpeg" alt="风机齿轮箱">
+                </div>
+                <div class="product-body">
+                    <h4>高次谐波传动链诊断系统</h4>
+                    <p>利用高次谐波分析技术，对齿轮箱、轴承等传动部件进行无损检测与精准诊断。</p>
+                    <ul class="product-features">
+                        <li>非接触式无损检测</li>
+                        <li>精准定位故障部件</li>
+                        <li>覆盖 1.5MW~10MW 全系列机组</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image">
+                    <img src="images/site-boxtransformer2.png" alt="箱变油智能深度净化">
+                </div>
+                <div class="product-body">
+                    <h4>箱变油智能深度净化系统</h4>
+                    <p>专为美式箱变设计的油液深度净化解决方案，消除游离水、颗粒污染与油泥沉积，恢复绝缘性能。</p>
+                    <ul class="product-features">
+                        <li>高效脱除游离水与溶解水</li>
+                        <li>颗粒污染度降至 NAS 7 级以内</li>
+                        <li>在线运行，无需停机</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image">
+                    <img src="images/product-mobile.jpg" alt="车载式移动净油系统">
+                </div>
+                <div class="product-body">
+                    <h4>车载式移动净油系统</h4>
+                    <p>履带式移动设计，机动性强，适用于风电场及野外现场油液紧急处理与定期维护，快速响应各类净化需求。</p>
+                    <ul class="product-features">
+                        <li>履带式移动，适应野外复杂地形</li>
+                        <li>快速部署，即到即用</li>
+                        <li>支持现场按需净化处理</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ADVANTAGES ===== -->
+<section class="advantages" id="advantages">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">TECHNOLOGY & ADVANTAGES</span>
+            <h2 class="section-title">核心技术与优势</h2>
+            <p class="section-subtitle">以独创的"三平衡"理论与三位一体智能运维技术体系，重新定义工业设备运维标准</p>
+        </div>
+        <div class="adv-grid">
+            <div class="adv-card fade-in">
+                <span class="icon">⚖️</span>
+                <h4>三平衡理论</h4>
+                <p>污染物(Contaminant)、添加剂(Additive)、油膜(Oil Film)三者动态平衡，从根源破解润滑失效</p>
+            </div>
+            <div class="adv-card fade-in">
+                <span class="icon">🧠</span>
+                <h4>AI 深度融合</h4>
+                <p>多维数据融合 + 深度学习算法，实现从"依靠经验判断"到"数据驱动决策"的跨越</p>
+            </div>
+            <div class="adv-card fade-in">
+                <span class="icon">📈</span>
+                <h4>量化收益</h4>
+                <p>单台风机年均节约成本约6.7万元，投资回收期小于6个月，ROI清晰可量化</p>
+            </div>
+            <div class="adv-card fade-in">
+                <span class="icon">🏭</span>
+                <h4>全系列覆盖</h4>
+                <p>解决方案已在 1.5MW~10MW 全系列机组、风电、光热等多领域成熟落地验证</p>
+            </div>
+        </div>
+
+        <!-- Tech Showcase with real diagrams -->
+        <div class="tech-showcase">
+            <div class="tech-item fade-in">
+                <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
+                <h5>油品水分含量与轴承寿命关系</h5>
+                <div class="chart">
+                    <img src="images/tech-water-chart.png" alt="水分含量与轴承寿命对照表">
+                </div>
+                <p>水分含量从 500ppm 降至 50ppm，轴承寿命可延长 3 倍以上（数据来源：Timken铁姆肯轴承实测）</p>
+            </div>
+            <div class="tech-item fade-in">
+                <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
+                <h5>油液污染度与设备寿命关系</h5>
+                <div class="chart">
+                    <img src="images/tech-life-chart.jpeg" alt="油液污染度与设备寿命">
+                </div>
+                <p>油品含水率深度净化至 25~100ppm，可大幅提升轴承剩余使用寿命（数据来源：Naria公司）</p>
+            </div>
+            <div class="tech-item fade-in">
+                <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
+                <h5>过滤精度与轴承寿命关系</h5>
+                <div class="chart">
+                    <img src="images/tech-filter-chart.jpeg" alt="过滤精度与轴承寿命">
+                </div>
+                <p>过滤器精度越高（3→12微米），轴承相对寿命提升越显著，从源头降低非计划停机</p>
+            </div>
+            <div class="tech-item fade-in">
+                <div class="label">系统架构 · SYSTEM ARCHITECTURE</div>
+                <h5>智能化运维系统流程</h5>
+                <div class="chart">
+                    <img src="images/tech-control-panel.png" alt="智能运维系统流程">
+                </div>
+                <p>变压器脱气脱水系统、智能化监控平台，让设备运行状态尽在掌握</p>
+            </div>
+            <div class="tech-item full fade-in">
+                <div class="label">系统流程 · SYSTEM FLOW</div>
+                <h5>风机齿轮箱智能运维系统油路</h5>
+                <div class="chart">
+                    <img src="images/tech-oil-diagram.png" alt="风机齿轮箱智能运维系统油路图">
+                </div>
+                <p>实时监测风机齿轮箱油液状态，结合 AI 算法实现设备健康评估与预测性维护</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SITE SHOWCASE ===== -->
+<section class="site-showcase" id="sites">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag">FIELD PROJECTS</span>
+            <h2 class="section-title">应用现场</h2>
+            <p class="section-subtitle">真实落地项目 · 风电场智能运维改造实例</p>
+        </div>
+        <div class="site-grid">
+            <div class="site-card fade-in">
+                <img src="images/site-boxtransformer.jpeg" alt="风电场箱变现场">
+                <div class="site-card-body">
+                    <h4>风电场箱变现场</h4>
+                    <p>百捷通精过滤系统部署于风电场美式箱变旁，对箱变油液进行在线深度净化，有效解决底部游离水与颗粒污染问题。</p>
+                </div>
+            </div>
+            <div class="site-card fade-in">
+                <img src="images/site-boxtransformer2.png" alt="箱变精细化管理">
+                <div class="site-card-body">
+                    <h4>箱变精细化管理</h4>
+                    <p>通过加装智能化监测设备，对箱变运行状态进行 7×24 小时实时监控，提前预警各类潜在故障风险。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners" id="partners">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">PARTNERS</span>
+            <h2 class="section-title">信赖我们的行业领导者</h2>
+            <p class="section-subtitle">解决方案已在电力、风电、光热等多个领域落地验证，成功服务多家行业头部领军企业</p>
+        </div>
+        <div class="partner-logos fade-in">
+            <div class="partner-item">
+                <div class="name">国家能源集团</div>
+                <div class="desc">全球领先综合能源集团</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">大唐集团</div>
+                <div class="desc">世界500强能源央企</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">国家电投</div>
+                <div class="desc">全球最大光伏发电企业</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">华能集团</div>
+                <div class="desc">国务院直管特大型央企</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">京能集团</div>
+                <div class="desc">大型国有能源集团</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">鲁能集团</div>
+                <div class="desc">大型国有综合性企业集团</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">中国绿发</div>
+                <div class="desc">国家绿色能源与低碳发展</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">明阳智能</div>
+                <div class="desc">全球知名新能源集团</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">东方电气</div>
+                <div class="desc">能源装备制造领军企业</div>
+            </div>
+            <div class="partner-item">
+                <div class="name">更多合作伙伴</div>
+                <div class="desc">持续扩展中...</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CASES ===== -->
+<section class="cases" id="cases">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">CASE STUDIES</span>
+            <h2 class="section-title">标杆案例</h2>
+            <p class="section-subtitle">头部企业的信赖之选——用真实成果说话</p>
+        </div>
+        <div class="case-grid">
+            <div class="case-card fade-in">
+                <div class="case-body">
+                    <span class="case-tag">国家能源集团 · 某风电场</span>
+                    <h4>精过滤系统 + AI诊断系统 部署项目</h4>
+                    <p>在10台风机上完成"精过滤系统+AI诊断系统"安装部署，稳定运行超过12个月。成功预警2起早期轴承异常，避免了严重的齿轮箱故障。</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <div class="val">NAS 5</div>
+                            <div class="lbl">油液清洁度</div>
+                        </div>
+                        <div class="case-result-item">
+                            <div class="val">2 起</div>
+                            <div class="lbl">早期预警成功</div>
+                        </div>
+                        <div class="case-result-item">
+                            <div class="val">12+ 月</div>
+                            <div class="lbl">稳定运行</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card fade-in">
+                <div class="case-body">
+                    <span class="case-tag">风电场综合效益提升</span>
+                    <h4>量化收益，驱动商业成功</h4>
+                    <p>根据某主流2.X MW风机实测数据，百捷通智能运维方案为单台风机年均节约成本约6.7万元，预计投资回收期小于6个月。</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <div class="val">6.7 万</div>
+                            <div class="lbl">单台年均节约</div>
+                        </div>
+                        <div class="case-result-item">
+                            <div class="val">&lt;6 月</div>
+                            <div class="lbl">投资回收期</div>
+                        </div>
+                        <div class="case-result-item">
+                            <div class="val">3 倍</div>
+                            <div class="lbl">轴承寿命延长</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COOPERATION ===== -->
+<section class="cooperation" id="cooperation">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">COOPERATION</span>
+            <h2 class="section-title">商务合作模式</h2>
+            <p class="section-subtitle">以客户需求为核心，构建"销售灵活化、交付标准化、服务一体化"的合作体系</p>
+        </div>
+        <div class="coop-grid">
+            <div class="coop-card fade-in">
+                <span class="icon">💼</span>
+                <h4>多元销售模式</h4>
+                <ul>
+                    <li><strong>设备销售</strong> — 一次性买断，终身技术咨询与软件升级</li>
+                    <li><strong>灵活租赁</strong> — 短期项目、阶段性需求，降低前期投入</li>
+                    <li><strong>现场服务</strong> — 按需净化处理及油品调质服务</li>
+                </ul>
+            </div>
+            <div class="coop-card fade-in">
+                <span class="icon">⏱️</span>
+                <h4>高效交付周期</h4>
+                <ul>
+                    <li><strong>标准产品</strong> — 常备现货，下单即发货，4~6周完成交付</li>
+                    <li><strong>定制开发</strong> — 方案确认后8~12周落地，严格把控节点</li>
+                    <li><strong>快速部署</strong> — 满足紧急项目与快速部署需求</li>
+                </ul>
+            </div>
+            <div class="coop-card fade-in">
+                <span class="icon">🛡️</span>
+                <h4>全维售后保障</h4>
+                <ul>
+                    <li><strong>整机2年质保</strong> — 核心零部件终身成本价维修</li>
+                    <li><strong>7×24小时远程诊断</strong> — 定期上门巡检，易损件提前预警更换</li>
+                    <li><strong>全生命周期服务</strong> — 建立设备档案，确保高效运转</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== IMPLEMENTATION ===== -->
+<section class="impl" id="impl">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">IMPLEMENTATION</span>
+            <h2 class="section-title">实施路径：三步走，稳健迈向智能运维</h2>
+            <p class="section-subtitle">标准化实施流程，确保项目稳步推进、效果可量化</p>
+        </div>
+        <div class="impl-steps">
+            <div class="impl-step fade-in">
+                <div class="step-num">01</div>
+                <h4>示范验证</h4>
+                <p>在1-2台设备上进行小范围试点，验证方案有效性，交付初步效果评估报告。</p>
+                <div class="time">1-3个月</div>
+            </div>
+            <div class="impl-step fade-in">
+                <div class="step-num">02</div>
+                <h4>优化调优</h4>
+                <p>根据示范数据，优化AI模型与治理策略，形成标准化方案，交付ROI详细测算。</p>
+                <div class="time">3-6个月</div>
+            </div>
+            <div class="impl-step fade-in">
+                <div class="step-num">03</div>
+                <h4>全面推广</h4>
+                <p>在企业或集团层面进行规模化部署，提供平台化运维管理与持续技术支持。</p>
+                <div class="time">6个月后</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="recruitment" id="recruitment">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag">JOIN US</span>
+            <h2 class="section-title">加入中电智为</h2>
+            <p class="section-subtitle">与我们一起，推动工业智能运维新时代</p>
+        </div>
+        <div class="recruit-simple-grid">
+            <a href="recruit.html" class="recruit-simple-card fade-in">
+                <div class="recruit-salary-tag">6-9K</div>
+                <h4>全栈工程师</h4>
+                <p>昆明 · 本科 · 1-3年</p>
+                <span class="recruit-link">查看详情 →</span>
+            </a>
+            <a href="recruit.html" class="recruit-simple-card fade-in">
+                <div class="recruit-salary-tag">5-9K</div>
+                <h4>电气设备维修工程师</h4>
+                <p>昆明 · 大专 · 1-3年</p>
+                <span class="recruit-link">查看详情 →</span>
+            </a>
+            <a href="recruit.html" class="recruit-simple-card fade-in">
+                <div class="recruit-salary-tag">6-10K</div>
+                <h4>风电滤油设备安装与维护工程师</h4>
+                <p>昆明 · 中专/中技 · 1-3年</p>
+                <span class="recruit-link">查看详情 →</span>
+            </a>
+            <a href="recruit.html" class="recruit-simple-card fade-in">
+                <div class="recruit-salary-tag">5-9K</div>
+                <h4>网络工程师</h4>
+                <p>昆明 · 本科 · 1-3年</p>
+                <span class="recruit-link">查看详情 →</span>
+            </a>
+        </div>
+        <div class="recruit-cta fade-in">
+            <p>将您的简历发送至：<a href="mailto:hr@zhongdianzhiwei.com" class="email-link">hr@zhongdianzhiwei.com</a></p>
+            <p style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.5);">查看详细岗位要求请点击对应岗位卡片</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+    <div class="section-inner">
+        <div class="fade-in">
+            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">CONTACT</span>
+            <h2 class="section-title">商业合作</h2>
+            <p class="section-subtitle">期待与您的合作，携手共建智慧工业未来</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info fade-in">
+                <h3>中电智为（北京）科技有限公司</h3>
+                <p>以客户需求为核心，为您提供省心、高效、可持续的智能运维解决方案</p>
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <div class="info">
+                        <label>官方合作电话</label>
+                        <span id="contactPhone">010-XXXX-XXXX（待补充）</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">✉️</div>
+                    <div class="info">
+                        <label>合作咨询邮箱</label>
+                        <span id="contactEmail">cooperation@zhongdianzhiwei.com</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📮</div>
+                    <div class="info">
+                        <label>招聘邮箱</label>
+                        <span>hr@zhongdianzhiwei.com</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <div class="info">
+                        <label>公司地址</label>
+                        <span>北京市（总部）</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map fade-in">
+                <img src="images/logo-beesolon.png" alt="百捷通 Beesolon 商标">
+                <h4>百捷通 · Beesolon</h4>
+                <p>® 注册商标 · 工业智能运维品牌</p>
+                <p style="margin-top:16px;">品质源于专注，性能源于创新</p>
+                <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:24px;">
+                    中电智为（北京）科技有限公司<br>
+                    期待您的垂询与合作
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="中电智为">
+                <h4>中电智为（北京）科技有限公司</h4>
+                <p>百捷通 · 工业设备全生命周期智能运维解决方案。<br>品质源于专注，性能源于创新。</p>
+            </div>
+            <div class="footer-col">
+                <h5>快速导航</h5>
+                <ul>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#products">产品中心</a></li>
+                    <li><a href="#advantages">技术优势</a></li>
+                    <li><a href="#partners">合作伙伴</a></li>
+                    <li><a href="#recruitment">官方招聘</a></li>
+                    <li><a href="#contact">商业合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>商业合作</h5>
+                <ul>
+                    <li><a href="#cooperation">商务模式</a></li>
+                    <li><a href="#impl">实施路径</a></li>
+                    <li><a href="#cases">标杆案例</a></li>
+                    <li><a href="#contact">商业合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>联系方式</h5>
+                <ul>
+                    <li><a href="#contact">电话：010-XXXX-XXXX</a></li>
+                    <li><a href="#contact">合作邮箱：cooperation@zhongdianzhiwei.com</a></li>
+                    <li><a href="#recruitment">招聘邮箱：hr@zhongdianzhiwei.com</a></li>
+                    <li><a href="#contact">地址：北京市</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 中电智为（北京）科技有限公司 版权所有</span>
+            <span>Beesolon 百捷通 工业智能运维</span>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+    // ===== Particles =====
+    (function() {
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (15 + Math.random() * 25) + 's';
+            p.style.animationDelay = (Math.random() * 20) + 's';
+            p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
+            p.style.opacity = 0.2 + Math.random() * 0.4;
+            container.appendChild(p);
+        }
+    })();
+
+    // ===== Mobile Menu =====
+    document.getElementById('menuToggle').addEventListener('click', function() {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
+
+    // ===== Scroll Effects =====
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const current = window.scrollY;
+        if (current > 80) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        lastScroll = current;
+    });
+
+    // ===== Lightbox =====
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    // Product card images that can be clicked
+    document.querySelectorAll('.product-image img, .site-card img, .tech-item .chart img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function(e) {
+            e.stopPropagation();
+            lightboxImg.src = this.src;
+            const alt = this.getAttribute('alt') || '';
+            const parent = this.closest('.product-body, .site-card-body, .tech-item');
+            const title = parent ? parent.querySelector('h4, h5') : null;
+            const caption = title ? title.textContent : alt;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close on clicking overlay or close button
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === this || e.target === lightboxClose) {
+            this.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
+
+    // ===== Smooth reveal on load =====
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.fade-in').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight) {
+                el.classList.add('visible');
+            }
+        });
+    });
+</script>
+</body>
+</html>
