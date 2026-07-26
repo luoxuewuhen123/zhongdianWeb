@@ -442,8 +442,8 @@
         .products .section-tag { border-color: var(--accent); color: var(--accent-light); }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             position: relative;
             z-index: 1;
         }
@@ -1130,7 +1130,7 @@
         @media (max-width: 1024px) {
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .pain-grid { grid-template-columns: 1fr 1fr; }
-            .product-grid { grid-template-columns: 1fr 1fr; }
+            .product-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
             .adv-grid { grid-template-columns: 1fr 1fr; }
             .partner-logos { grid-template-columns: repeat(4, 1fr); }
             .footer-top { grid-template-columns: 1fr 1fr; }
@@ -1349,32 +1349,35 @@
                 <span class="section-tag">ABOUT US</span>
                 <h2>中电智为（北京）科技有限公司</h2>
                 <p>
-                    中电智为（北京）科技有限公司，旗下品牌"百捷通（Beesolon）"，是一家专注于工业设备全生命周期智能运维解决方案的高新技术企业。公司以"过滤净化 + 油品监测 + 高次谐波传动链检测"与AI多维深度融合的三位一体智能运维技术为核心，深耕风电、光热等新能源领域。
+                    中电智为（北京）科技有限公司<strong>（CHIEVIN）</strong>成立于<strong>2013 年</strong>，是专注风电新能源赛道、深耕工业设备全生命周期智能运维的高新技术企业，旗下核心运维品牌<strong>百捷通 Beesolon</strong>。
                 </p>
                 <p>
-                    我们围绕独创的润滑系统"三平衡"理论，致力于破解非计划停机、隐性故障和高昂运维成本等行业核心痛点，助力客户实现从"被动维修"到"主动预防"、从"粗放运维"到"精准治理"的跨越，最终落地无人值守远程智能化运维。
+                    公司长期与国内顶尖科研院校、行业技术专家建立产学研深度协同合作，共建流体净化、电气故障诊断联合实验室。依托自主研发的润滑三平衡理论、高次谐波 AI 诊断、极化聚合精密净化等前沿技术，累计取得多项发明专利、软件著作权与产品知识产权，打造"过滤净化 + 油品在线监测 + 传动链电气诊断"三位一体运维体系。
+                </p>
+                <p>
+                    企业聚焦风电齿轮箱、美式箱变两大核心设备，提供源头治理、实时监测、故障预判、长效管控一站式数字化解决方案，服务国内各大头部风电集团，构建安全、高效、低成本的智慧风电运维产业生态。
                 </p>
             </div>
             <div class="about-cards fade-in">
                 <div class="about-card">
                     <span class="icon">🔬</span>
-                    <h4>核心技术</h4>
-                    <p>过滤净化 + 油品监测 + 高次谐波传动链检测 + AI多维深度融合</p>
+                    <h4>产学研协同</h4>
+                    <p>联合高校课题组与行业专家，共建联合实验室，攻关节能环保核心课题</p>
                 </div>
                 <div class="about-card">
                     <span class="icon">⚙️</span>
                     <h4>三平衡理论</h4>
-                    <p>独创污染物、添加剂、油膜三平衡体系，从根源破解润滑失效</p>
+                    <p>独创污染物、添加剂、油膜三平衡体系，从根源阻断润滑失效恶性循环</p>
                 </div>
                 <div class="about-card">
-                    <span class="icon">📡</span>
-                    <h4>智能监测</h4>
-                    <p>7×24小时远程诊断，AI实时预警，变被动为主动</p>
+                    <span class="icon">🛡️</span>
+                    <h4>自主知识产权</h4>
+                    <p>多项发明专利与软件著作权，全系列自研硬件、算法与管控平台</p>
                 </div>
                 <div class="about-card">
                     <span class="icon">🌱</span>
-                    <h4>绿色低碳</h4>
-                    <p>延长设备寿命、减少资源浪费，助力碳中和目标</p>
+                    <h4>企业愿景</h4>
+                    <p>携手新能源企业共建智慧风电运维体系，助力国家双碳战略落地</p>
                 </div>
             </div>
         </div>
@@ -1423,82 +1426,54 @@
                     <img src="images/product-cabinet.jpg" alt="精过滤系统" loading="lazy">
                 </div>
                 <div class="product-body">
-                    <h4>精过滤系统</h4>
-                    <p>高精度多级过滤设备，集成真空脱水、脱气、除颗粒功能。覆盖便携式、集成柜式等多种形态，满足风电齿轮箱、箱变等场景的油液深度净化需求。</p>
+                    <h4>百捷通精过滤系统</h4>
+                    <p>采用自主专利极化聚合复合膜分离技术，精准控油品清洁度至 NAS6-8 黄金区间，同步高效脱除游离水、乳化水，避免过度过滤损耗添加剂，延长齿轮、轴承与润滑油使用寿命。</p>
                     <ul class="product-features">
-                        <li>便携/柜式多种规格可选</li>
-                        <li>清洁度维持 NAS 5 级以内</li>
-                        <li>深度脱水至 25~100ppm</li>
+                        <li>极化聚合膜分离自研技术</li>
+                        <li>固定式 + 履带式遥控便携双形态</li>
+                        <li>适配高原、高湿、高寒野外工况</li>
                     </ul>
                 </div>
             </div>
             <div class="product-card fade-in">
                 <div class="product-image">
-                    <img src="images/product-tall.jpg" alt="高精度滤油机" loading="lazy">
+                    <img src="images/tech-control-panel.jpg" alt="润滑油在线AI监测系统" loading="lazy">
                 </div>
                 <div class="product-body">
-                    <h4>高精度滤油机</h4>
-                    <p>配备精密过滤与真空脱水系统，高效去除油中固体颗粒、游离水和油泥，从根源改善油品质量。</p>
+                    <h4>润滑油在线AI监测系统</h4>
+                    <p>自研多参数传感模块，7×24 小时采集颗粒、微水、粘度、磨损金属、介电常数等指标。搭载自主 AI 算法预判添加剂剩余寿命，支撑风场实现"按质换油"精细化管理。</p>
                     <ul class="product-features">
-                        <li>高精度过滤 + 真空脱水</li>
-                        <li>深度脱水至 25~100ppm</li>
-                        <li>适用于油库及现场维护</li>
+                        <li>自研多参数传感采集模块</li>
+                        <li>AI 研判添加剂剩余寿命</li>
+                        <li>摒弃离线取样落后模式</li>
                     </ul>
                 </div>
             </div>
             <div class="product-card fade-in">
                 <div class="product-image">
-                    <img src="images/tech-control-panel.jpg" alt="AI智能诊断系统">
+                    <img src="images/product-gearbox.jpeg" alt="高次谐波传动链AI诊断系统" loading="lazy">
                 </div>
                 <div class="product-body">
-                    <h4>AI 智能诊断系统</h4>
-                    <p>基于多维数据融合与AI深度学习，实现设备状态实时监测、早期故障预警与智能诊断平台。</p>
+                    <h4>高次谐波传动链AI诊断系统</h4>
+                    <p>行业革命性非接触带电检测自研技术，无需停机断电，通过电缆采集 2-40 次高次谐波信号，AI 智能比对故障数据库，精准识别齿轮箱、主轴、发电机早期隐患。</p>
                     <ul class="product-features">
-                        <li>7×24小时实时在线监测</li>
-                        <li>AI 模型持续优化迭代</li>
-                        <li>早期异常预警，避免重大事故</li>
+                        <li>非接触带电检测，无需停机</li>
+                        <li>准确率 94.3%，提前 4-6 小时预警</li>
+                        <li>兼顾传动链 + 并网侧双重防护</li>
                     </ul>
                 </div>
             </div>
             <div class="product-card fade-in">
                 <div class="product-image">
-                    <img src="images/product-gearbox.jpeg" alt="风机齿轮箱" loading="lazy">
+                    <img src="images/site-boxtransformer2.jpg" alt="美式箱变深度治理智能系统" loading="lazy">
                 </div>
                 <div class="product-body">
-                    <h4>高次谐波传动链诊断系统</h4>
-                    <p>利用高次谐波分析技术，对齿轮箱、轴承等传动部件进行无损检测与精准诊断。</p>
+                    <h4>美式箱变深度治理智能系统</h4>
+                    <p>根治箱变进水受潮、油泥沉积、游离水积聚、局部放电、总烃超标、接头发热八大顽疾，集成真空脱水脱气、底部取油缓释回油、长效密封、铁芯接地治理六维方案。</p>
                     <ul class="product-features">
-                        <li>非接触式无损检测</li>
-                        <li>精准定位故障部件</li>
-                        <li>覆盖 1.5MW~10MW 全系列机组</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card fade-in">
-                <div class="product-image">
-                    <img src="images/site-boxtransformer2.jpg" alt="箱变油智能深度净化">
-                </div>
-                <div class="product-body">
-                    <h4>箱变油智能深度净化系统</h4>
-                    <p>专为美式箱变设计的油液深度净化解决方案，消除游离水、颗粒污染与油泥沉积，恢复绝缘性能。</p>
-                    <ul class="product-features">
-                        <li>高效脱除游离水与溶解水</li>
-                        <li>颗粒污染度降至 NAS 7 级以内</li>
-                        <li>在线运行，无需停机</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-card fade-in">
-                <div class="product-image">
-                    <img src="images/product-mobile.jpg" alt="车载式移动净油系统">
-                </div>
-                <div class="product-body">
-                    <h4>车载式移动净油系统</h4>
-                    <p>履带式移动设计，机动性强，适用于风电场及野外现场油液紧急处理与定期维护，快速响应各类净化需求。</p>
-                    <ul class="product-features">
-                        <li>履带式移动，适应野外复杂地形</li>
-                        <li>快速部署，即到即用</li>
-                        <li>支持现场按需净化处理</li>
+                        <li>六维综合治理，3-5 年稳定不反弹</li>
+                        <li>智能 PLC 无人值守控制系统</li>
+                        <li>IP55 防护，杜绝安全事故</li>
                     </ul>
                 </div>
             </div>
@@ -1517,23 +1492,23 @@
         <div class="adv-grid">
             <div class="adv-card fade-in">
                 <span class="icon">⚖️</span>
-                <h4>三平衡理论</h4>
-                <p>污染物(Contaminant)、添加剂(Additive)、油膜(Oil Film)三者动态平衡，从根源破解润滑失效</p>
+                <h4>产学研协同 + 自主知识产权</h4>
+                <p>长期校企联合研发，全系列自研硬件、算法与管控平台，持有自主专利与软件著作权，构建行业独有的技术壁垒</p>
             </div>
             <div class="adv-card fade-in">
                 <span class="icon">🧠</span>
-                <h4>AI 深度融合</h4>
-                <p>多维数据融合 + 深度学习算法，实现从"依靠经验判断"到"数据驱动决策"的跨越</p>
+                <h4>根源治理底层逻辑</h4>
+                <p>以润滑三角平衡理论为根基，阻断"污染物→添加剂损耗→油膜破损→设备磨损"恶性循环，治理效果长效稳定不反弹</p>
             </div>
             <div class="adv-card fade-in">
                 <span class="icon">📈</span>
-                <h4>量化收益</h4>
-                <p>单台风机年均节约成本约6.7万元，投资回收期小于6个月，ROI清晰可量化</p>
+                <h4>量化降本增效</h4>
+                <p>大幅降低齿轮箱百万级大修频次，削减非计划停机发电量损失，综合投资回报可达 3.8 倍</p>
             </div>
             <div class="adv-card fade-in">
                 <span class="icon">🏭</span>
-                <h4>全系列覆盖</h4>
-                <p>解决方案已在 1.5MW~10MW 全系列机组、风电、光热等多领域成熟落地验证</p>
+                <h4>全场景一站式交付</h4>
+                <p>IP55 工业防护，模块化紧凑设计；具备方案设计、设备供货、现场技改、数字化运维一体化交付能力</p>
             </div>
         </div>
 
