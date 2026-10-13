@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中电智为（北京）科技有限公司 | 百捷通 · 工业智能运维</title>
-    <meta name="description" content="中电智为（北京）科技有限公司——百捷通工业智能运维，专业提供风电滤油机、润滑油在线监测系统、高次谐波AI诊断、美式箱变深度治理等工业设备智能运维解决方案，助力新能源行业落地无人值守远程智能化运维。">
+    <meta name="description" content="中电智为（北京）科技有限公司——百捷通工业智能运维。三位一体智能运维：精过滤系统、润滑油在线AI监测、高次谐波传动链AI诊断(HDS)、美式箱变深度治理。润滑三平衡理论支撑，故障识别准确率94.3%，投资回收期<6个月。">
+    <meta name="keywords" content="百捷通,Beesolon,中电智为,风电滤油机,润滑油在线监测,高次谐波诊断,HDS,美式箱变治理,油液净化,工业智能运维,风电运维,油品监测,预测性维护">
     <link rel="canonical" href="https://www.zhongdianzhiwei.com/">
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="preload" href="images/hero-wind.jpg" as="image" fetchpriority="high">
@@ -160,8 +161,10 @@
             background: var(--accent);
             transition: width 0.3s;
         }
-        .nav-links a:hover { color: #fff; }
+    .nav-links a:hover { color: #fff; }
         .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--accent-light); }
+        .nav-links a.active::after { width: 100%; }
         .nav-cta {
             padding: 8px 24px;
             background: var(--gradient-accent);
@@ -1130,6 +1133,644 @@
             color: rgba(255,255,255,0.35);
         }
 
+        /* ============================================================
+           2026-10 新增：解决方案内容样式（三平衡/ 战略蓝图 / HDS / 价值量化）
+           ============================================================ */
+
+        /* ---- 区块统一视觉锚点 ---- */
+        .sec-head { text-align: center; margin-bottom: 56px; }
+        .sec-head .section-tag {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid currentColor;
+            border-radius: 20px;
+            padding: 4px 14px;
+            margin-bottom: 18px;
+        }
+        .sec-head h2 { font-size: clamp(26px, 3.4vw, 40px); letter-spacing: 1px; margin-bottom: 14px; }
+        .sec-head p { color: var(--text-light); max-width: 760px; margin: 0 auto; font-size: 15px; font-weight: 300; }
+
+        /* 卡片统一浮起效果 */
+        .lift { transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s, border-color .35s, background .35s; }
+        .lift:hover { transform: translateY(-6px); }
+
+        /* ---- 1. 三平衡理论 ---- */
+        .balance { background: #fff; }
+        .balance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+            position: relative;
+        }
+        /* 中间的三角连线 */
+        .balance-grid::before {
+            content: '';
+            position: absolute;
+            top: 116px;
+            left: 16.6%;
+            right: 16.6%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent) 80%, transparent);
+            opacity: .28;
+            z-index: 0;
+        }
+        .balance-card {
+            position: relative;
+            z-index: 1;
+            background: var(--bg-light);
+            border: 1px solid rgba(10,22,40,0.06);
+            border-radius: var(--radius);
+            padding: 40px 30px 34px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .balance-card::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s;
+        }
+        .balance-card:hover::after { transform: scaleX(1); }
+        .balance-card .num {
+            width: 52px; height: 52px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            color: #fff;
+            font-weight: 900;
+            font-size: 19px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 20px rgba(0,168,168,.32);
+        }
+        .balance-card h4 { font-size: 20px; margin-bottom: 6px; }
+        .balance-card .en {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: var(--accent-dark);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .balance-card .mech {
+            font-size: 14px;
+            color: var(--text);
+            background: rgba(0,168,168,.07);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 10px 14px;
+            text-align: left;
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+        .balance-card .mech b { color: var(--accent-dark); }
+        .balance-card p { font-size: 13px; color: var(--text-light); line-height: 1.8; text-align: left; }
+
+        /* 恶性循环链路 */
+        .vicious-cycle {
+            margin-top: 46px;
+            background: linear-gradient(135deg, #0a1628, #132244);
+            border-radius: var(--radius);
+            padding: 34px 32px;
+            color: #fff;
+        }
+        .vicious-cycle h4 { font-size: 17px; color: var(--gold-light); margin-bottom: 6px; }
+        .vicious-cycle .sub { font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 22px; }
+        .cycle-flow {
+            display: flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .cycle-node {
+            flex: 1 1 0;
+            min-width: 118px;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 10px;
+            padding: 13px 10px;
+            text-align: center;
+            font-size: 12.5px;
+            color: rgba(255,255,255,.82);
+            display: flex; align-items: center; justify-content: center;
+            line-height: 1.5;
+        }
+        .cycle-arrow {
+            display: flex; align-items: center;
+            color: var(--accent);
+            font-size: 15px;
+            flex: 0 0 auto;
+        }
+        .cycle-result {
+            margin-top: 20px;
+            padding: 14px 18px;
+            background: rgba(201,168,76,.12);
+            border: 1px solid rgba(201,168,76,.3);
+            border-radius: 10px;
+            font-size: 13.5px;
+            color: var(--gold-light);
+            text-align: center;
+        }
+
+        /* ---- 2. 战略蓝图 ---- */
+        .strategy { background: var(--bg-light); }
+        .strategy-lead {
+            max-width: 880px;
+            margin: 0 auto 52px;
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.9;
+            color: var(--text);
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--accent);
+        }
+        .strategy-lead b { color: var(--accent-dark); }
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+        .strategy-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 36px 30px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+        .strategy-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity .35s;
+        }
+        .strategy-card:hover::before { opacity: 1; }
+        .strategy-card .step {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent-dark);
+            background: rgba(0,168,168,.09);
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 14px;
+            margin-bottom: 16px;
+        }
+        .strategy-card h4 { font-size: 19px; margin-bottom: 12px; }
+        .strategy-card p { font-size: 14px; color: var(--text-light); line-height: 1.85; }
+        .strategy-vision {
+            margin-top: 44px;
+            text-align: center;
+            padding: 30px 34px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, rgba(0,168,168,.08), rgba(201,168,76,.08));
+            border: 1px dashed rgba(0,168,168,.35);
+        }
+        .strategy-vision .lbl {
+            font-size: 12px; letter-spacing: 3px; color: var(--accent-dark);
+            text-transform: uppercase; margin-bottom: 10px;
+        }
+        .strategy-vision p { font-size: 16px; color: var(--primary); line-height: 1.9; }
+
+        /* ---- 3. HDS 原理流程 ---- */
+        .hds { background: #fff; }
+        .hds-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 52px;
+        }
+        .hds-step {
+            background: var(--bg-light);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            position: relative;
+            border: 1px solid rgba(10,22,40,.05);
+        }
+        .hds-step::after {
+            content: '▶';
+            position: absolute;
+            right: -14px; top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 13px;
+            z-index: 2;
+        }
+        .hds-step:last-child::after { display: none; }
+        .hds-step .n {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            background: var(--gradient-accent);
+            color: #fff;
+            font-weight: 800;
+            font-size: 15px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 16px;
+        }
+        .hds-step h4 { font-size: 17px; margin-bottom: 10px; }
+        .hds-step p { font-size: 13.5px; color: var(--text-light); line-height: 1.8; }
+        .hds-step .kw {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-dark);
+            background: rgba(0,168,168,.1);
+            border-radius: 12px;
+            padding: 3px 12px;
+        }
+
+        /* ---- 对比表 ---- */
+        .cmp-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            -webkit-overflow-scrolling: touch;
+        }
+        .cmp-table {
+            width: 100%;
+            min-width: 680px;
+            border-collapse: collapse;
+            background: #fff;
+            font-size: 14px;
+        }
+        .cmp-table thead th {
+            background: var(--primary);
+            color: #fff;
+            padding: 18px 22px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .cmp-table thead th:first-child { width: 20%; }
+        .cmp-table thead th.hds-col { background: linear-gradient(135deg, #008080, #00a8a8); }
+        .cmp-table tbody th {
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 18px 22px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            border-bottom: 1px solid #eceff3;
+            vertical-align: middle;
+        }
+        .cmp-table td {
+            padding: 18px 22px;
+            color: var(--text-light);
+            line-height: 1.75;
+            border-bottom: 1px solid #eceff3;
+            vertical-align: top;
+        }
+        .cmp-table td.hds-col {
+            background: rgba(0,168,168,.05);
+            color: var(--text);
+            font-weight: 500;
+        }
+        .cmp-table tr:last-child th, .cmp-table tr:last-child td { border-bottom: none; }
+        .cmp-table tbody tr:hover th, .cmp-table tbody tr:hover td { background-color: #fafbfc; }
+        .cmp-table tbody tr:hover td.hds-col { background-color: rgba(0,168,168,.09); }
+        .cmp-metric {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .cmp-metric .m {
+            background: #fff;
+            border: 1px solid rgba(0,168,168,.35);
+            color: var(--accent-dark);
+            border-radius: 8px;
+            padding: 4px 10px;
+            font-weight: 800;
+            font-size: 15px;
+        }
+        .cmp-metric .m.old {
+            border-color: #e3e6ea;
+            color: #98a2ae;
+            font-weight: 600;
+        }
+
+        /* ---- HDS 应用场景 ---- */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 52px;
+        }
+        .scene-card {
+            background: var(--bg-light);
+            border-radius: var(--radius);
+            padding: 34px 28px;
+            border-top: 3px solid var(--accent);
+        }
+        .scene-card .tag {
+            font-size: 11.5px;
+            letter-spacing: 1px;
+            color: var(--accent-dark);
+            background: rgba(0,168,168,.12);
+            border-radius: 12px;
+            padding: 3px 10px;
+            display: inline-block;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .scene-card h4 { font-size: 18px; margin-bottom: 10px; }
+        .scene-card p { font-size: 13.5px; color: var(--text-light); line-height: 1.85; }
+        .scene-card .hit {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px dashed #d6dce4;
+            font-size: 13px;
+            color: var(--primary);
+        }
+        .scene-card .hit b { color: var(--accent-dark); }
+
+        /* ---- 4. BJT 设备展示 ---- */
+        .bjt { background: var(--bg-dark); position: relative; overflow: hidden; }
+        .bjt::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 800px 480px at 25% 50%, rgba(0,168,168,.07), transparent);
+        }
+        .bjt .sec-head h2 { color: #fff; }
+        .bjt .sec-head p { color: rgba(255,255,255,.6); }
+        .bjt-intro {
+            max-width: 880px;
+            margin: 0 auto 48px;
+            text-align: center;
+            color: rgba(255,255,255,.65);
+            font-size: 14.5px;
+            line-height: 1.95;
+            position: relative;
+        }
+        .bjt-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 44px;
+            align-items: center;
+            position: relative;
+        }
+        .bjt-gallery {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: var(--radius);
+            padding: 22px;
+        }
+        .bjt-main {
+            background: rgba(255,255,255,.04);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .bjt-main img { width: 100%; height: 400px; object-fit: contain; cursor: pointer; }
+        .bjt-thumbs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .bjt-thumb {
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255,255,255,.04);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: border-color .3s, transform .3s;
+        }
+        .bjt-thumb img { width: 100%; height: 96px; object-fit: cover; display: block; }
+        .bjt-thumb:hover, .bjt-thumb.active { border-color: var(--accent); transform: translateY(-3px); }
+        .bjt-list { display: grid; gap: 16px; }
+        .bjt-item {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 14px;
+            padding: 26px 26px;
+        }
+        .bjt-item h4 { color: #fff; font-size: 17px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .bjt-item h4::before {
+            content: '';
+            width: 4px; height: 18px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+        .bjt-item p { color: rgba(255,255,255,.6); font-size: 13.5px; line-height: 1.85; }
+
+        /* ---- 5. 核心优势（方案视角） ---- */
+        .sol-adv-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .sol-adv {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 34px 26px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            border: 1px solid rgba(10,22,40,.05);
+        }
+        .sol-adv .n {
+            position: absolute;
+            top: 18px; right: 22px;
+            font-size: 44px;
+            font-weight: 900;
+            color: rgba(0,168,168,.09);
+            line-height: 1;
+        }
+        .sol-adv .icon { font-size: 32px; display: block; margin-bottom: 14px; }
+        .sol-adv h4 { font-size: 17px; margin-bottom: 10px; }
+        .sol-adv p { font-size: 13.5px; color: var(--text-light); line-height: 1.85; }
+
+        /* ---- 6. 价值量化 ---- */
+        .value { background: var(--bg-light); }
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-bottom: 54px;
+        }
+        .value-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 38px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+        .value-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient-accent);
+        }
+        .value-card .v {
+            font-size: clamp(30px, 3.4vw, 42px);
+            font-weight: 900;
+            line-height: 1;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+        .value-card .k { font-size: 15px; font-weight: 600; color: var(--primary); margin-bottom: 8px; }
+        .value-card .d { font-size: 12.5px; color: var(--text-light); line-height: 1.75; }
+
+        /* 污染度-寿命可视化表 */
+        .viz-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 36px 34px;
+            box-shadow: var(--shadow-sm);
+        }
+        .viz-card h4 { font-size: 19px; margin-bottom: 6px; }
+        .viz-card .cap { font-size: 13px; color: var(--text-light); margin-bottom: 24px; }
+        .viz-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 560px; }
+        .viz-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .viz-table thead th {
+            background: var(--primary);
+            color: #fff;
+            padding: 13px 16px;
+            font-weight: 600;
+            font-size: 13px;
+            text-align: center;
+        }
+        .viz-table thead th:first-child { text-align: left; }
+        .viz-table tbody td, .viz-table tbody th {
+      padding: 11px 16px;
+     text-align: center;
+            border-bottom: 1px solid #eef1f5;
+          color: var(--text-light);
+            font-weight: 400;
+        }
+        .viz-table tbody th:first-child { text-align: left; color: var(--primary); font-weight: 600; }
+        .viz-table tbody tr:last-child td, .viz-table tbody tr:last-child th { border-bottom: none; }
+        .viz-cell {
+            display: block;
+            border-radius: 8px;
+            padding: 7px 6px;
+            font-weight: 700;
+            font-size: 13px;
+            color: #fff;
+        }
+        .viz-src {
+            margin-top: 18px;
+            font-size: 12px;
+            color: #98a2ae;
+            line-height: 1.8;
+            border-top: 1px dashed #dde2e8;
+            padding-top: 14px;
+        }
+
+        /* ---- ROI 测算卡 ---- */
+        .roi-box {
+            margin-top: 34px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .roi-item {
+            background: #fff;
+            border-radius: 14px;
+            padding: 26px 28px;
+            border-left: 4px solid var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+        .roi-item .lbl { font-size: 12.5px; color: var(--text-light); margin-bottom: 6px; }
+        .roi-item .val { font-size: 26px; font-weight: 900; color: var(--primary); }
+        .roi-item .val span { color: var(--accent-dark); }
+        .roi-cond {
+            margin-top: 22px;
+            font-size: 12.5px;
+            color: #98a2ae;
+            text-align: center;
+        }
+
+        /* ---- 顶部滚动进度条 ---- */
+        .scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            width: 0;
+            background: var(--gradient-accent);
+            z-index: 1001;
+            transition: width .1s linear;
+        }
+        /* 返回顶部 */
+        .to-top {
+            position: fixed;
+            right: 26px; bottom: 26px;
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all .3s;
+            z-index: 900;
+        }
+        .to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .to-top:hover { background: var(--accent-dark); transform: translateY(-3px); }
+
+        /* ---- 响应式：新板块 ---- */
+        @media (max-width: 1024px) {
+            .balance-grid { grid-template-columns: 1fr; gap: 18px; }
+            .balance-grid::before { display: none; }
+            .strategy-grid { grid-template-columns: 1fr; gap: 18px; }
+            .hds-flow { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .hds-step::after { display: none; }
+            .scene-grid { grid-template-columns: 1fr; gap: 16px; }
+            .bjt-grid { grid-template-columns: 1fr; gap: 32px; }
+            .bjt-main img { height: 320px; }
+            .sol-adv-grid { grid-template-columns: 1fr 1fr; }
+            .value-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+        }
+        @media (max-width: 768px) {
+            .sec-head { margin-bottom: 36px; }
+            .sec-head h2 { font-size: 23px; }
+            .sec-head p { font-size: 13.5px; }
+            .balance-card { padding: 28px 22px; text-align: left; }
+            .balance-card .num { margin: 0 0 14px; }
+            .vicious-cycle { padding: 26px 20px; }
+            .cycle-flow { flex-direction: column; }
+            .cycle-arrow { transform: rotate(90deg); justify-content: center; height: 16px; }
+            .strategy-lead { padding: 24px 20px; font-size: 15px; }
+            .strategy-card { padding: 26px 22px; }
+            .hds-flow { grid-template-columns: 1fr; }
+            .hds-step { padding: 24px 20px; }
+            .cmp-table { font-size: 13px; }
+            .cmp-table thead th, .cmp-table tbody th, .cmp-table td { padding: 14px 16px; }
+            .bjt-main img { height: 240px; }
+            .bjt-thumb img { height: 68px; }
+            .bjt-gallery { padding: 14px; }
+            .sol-adv-grid { grid-template-columns: 1fr; gap: 14px; }
+            .value-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .value-card { padding: 26px 16px; }
+            .viz-card { padding: 26px 20px; }
+            .roi-box { grid-template-columns: 1fr; gap: 12px; }
+            .to-top { right: 16px; bottom: 16px; width: 42px; height: 42px; }
+        }
+        @media (max-width: 480px) {
+            .value-grid { grid-template-columns: 1fr; }
+            .bjt-thumb img { height: 56px; }
+        }
+
         /* ===== Animations ===== */
         .fade-in {
             opacity: 0;
@@ -1142,8 +1783,18 @@
         }
 
         /* ===== Responsive ===== */
+        @media (max-width: 1180px) {
+       .nav-links { gap: 20px; }
+            .nav-links a { font-size: 13px; }
+    .nav-inner { padding: 0 18px; }
+        }
         @media (max-width: 1024px) {
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .nav-links {
+                gap: 16px;
+    }
+            .nav-links a { font-size: 12.5px; letter-spacing: 0; }
+            .nav-cta { padding: 8px 16px; }
+        .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .pain-grid { grid-template-columns: 1fr 1fr; }
             .product-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
             .adv-grid { grid-template-columns: 1fr 1fr; }
@@ -1161,8 +1812,8 @@
         }
         @media (max-width: 768px) {
             /* 导航 */
-            .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(10,22,40,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 16px 24px 24px; gap: 4px; align-items: stretch; border-top: 1px solid rgba(255,255,255,0.06); }
-            .nav-links.open { display: flex; }
+            .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: rgba(10,22,40,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 16px 24px 24px; gap: 4px; align-items: stretch; border-top: 1px solid rgba(255,255,255,0.06); max-height: calc(100vh - 72px); overflow-y: auto; }
+      .nav-links.open { display: flex; }
             .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.04); }
             .nav-links a { display: block; padding: 14px 12px; font-size: 15px; border-radius: 8px; }
             .nav-links a::after { display: none; }
@@ -1289,6 +1940,9 @@
 </head>
 <body>
 
+<!-- ===== 滚动进度条 ===== -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 <!-- ===== NAV ===== -->
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
@@ -1300,14 +1954,15 @@
             </div>
         </a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#about">关于我们</a></li>
+  <li><a href="#about">关于我们</a></li>
+            <li><a href="#painpoints">行业痛点</a></li>
+       <li><a href="#balance">三平衡理论</a></li>
             <li><a href="#products">产品中心</a></li>
-            <li><a href="#advantages">技术优势</a></li>
-            <li><a href="#sites">应用现场</a></li>
-            <li><a href="#cases">标杆案例</a></li>
-            <li><a href="recruit.html">官方招聘</a></li>
+            <li><a href="#hds">HDS 技术</a></li>
+            <li><a href="#value">价值量化</a></li>
+    <li><a href="#cases">标杆案例</a></li>
             <li><a href="#contact" class="nav-cta">商业合作</a></li>
-        </ul>
+</ul>
         <button class="menu-toggle" id="menuToggle" aria-label="菜单">
             <span></span><span></span><span></span>
         </button>
@@ -1428,8 +2083,93 @@
     </div>
 </section>
 
+        <!-- ===== 三平衡理论 ===== -->
+        <section class="balance" id="balance">
+    <div class="section-inner">
+        <div class="sec-head fade-in">
+            <span class="section-tag">CORE THEORY · 三平衡机理</span>
+            <h2>润滑系统的「三平衡」理论</h2>
+            <p>污染物、添加剂、油膜——三者互为因果。理解这个三角平衡，就理解了为什么"越干净越好"是个误区。</p>
+        </div>
+        <div class="balance-grid">
+            <div class="balance-card lift fade-in">
+                <div class="num">01</div>
+                <h4>污染物</h4>
+                <span class="en">Contaminant</span>
+                <div class="mech">核心为固体颗粒与水分，通过<b>物理吸附</b>附着于摩擦表面，同时引发基础油<b>化学水解</b>，直接侵蚀润滑界面。</div>
+                <p>同时 1-5μm 的微颗粒在油流带动下，对齿轮箱传动部件及齿合面构成实时的冲刷磨损与研磨磨损。</p>
+            </div>
+            <div class="balance-card lift fade-in">
+                <div class="num">02</div>
+                <h4>添加剂</h4>
+                <span class="en">Additive</span>
+                <div class="mech">以极压抗磨剂为核心，通过<b>化学反应</b>在金属表面生成高强度<b>边界润滑膜</b>，主动对抗污染物的物理与化学破坏。</div>
+                <p>高污染润滑油添加剂被污染物、油泥包裹丧失活性，沦为油液内无效伪组分，实际上已失去应有作用。</p>
+            </div>
+            <div class="balance-card lift fade-in">
+                <div class="num">03</div>
+                <h4>油膜</h4>
+                <span class="en">Oil Film · 设备的最终防线</span>
+                <div class="mech">油膜分为<b>流体动压油膜</b>与<b>边界润滑膜</b>，是隔离摩擦副的核心屏障。</div>
+                <p>添加剂持续修复受损油膜，其完整性直接决定设备磨损速率与使用寿命。</p>
+            </div>
+        </div>
+        <div class="vicious-cycle fade-in">
+            <h4>污染 → 失效 → 磨损：不可逆的恶性循环</h4>
+            <p class="sub">一旦三平衡被打破，磨损便会自我放大，直至设备报废。这正是"定期换油"治标不治本的根本原因。</p>
+            <div class="cycle-flow">
+    <div class="cycle-node">污染物累积<br>吸附添加剂</div>
+                <div class="cycle-arrow">→</div>
+ <div class="cycle-node">添加剂水解<br>成膜失败</div>
+          <div class="cycle-arrow">→</div>
+         <div class="cycle-node">油膜破损<br>承载骤降</div>
+    <div class="cycle-arrow">→</div>
+ <div class="cycle-node">金属直接<br>摩擦磨损</div>
+                <div class="cycle-arrow">→</div>
+    <div class="cycle-node">新生磨屑<br>加剧污染</div>
+            </div>
+    <div class="cycle-result">磨屑、酸性氧化物、水分叠加 → 添加剂损耗进一步加剧 → 油膜持续恶化，磨损逐级放大</div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== STRATEGY ===== -->
+        <section class="strategy" id="strategy">
+    <div class="section-inner">
+        <div class="sec-head fade-in">
+            <span class="section-tag">STRATEGY · 战略蓝图</span>
+            <h2>百捷通的一体化智能运维哲学</h2>
+            <p>不卖单台设备，卖一套从源头防护到智能治理的系统性价值服务。</p>
+    </div>
+        <div class="strategy-lead fade-in">
+            打造<b>「过滤净化 + 油品监测 + 高次谐波传动链检测」</b>与 <b>AI 多维度深度融合</b>的三位一体设备全生命周期智能运维解决方案，为工业设备提供从源头防护到智能治理的系统性价值服务。
+        </div>
+        <div class="strategy-grid">
+       <div class="strategy-card lift fade-in">
+     <span class="step">01</span>
+      <h4>一站式差异化价值</h4>
+         <p>深耕行业痛点，以痛点为原点开发出区别于市面单一功能设备，整合多维度技术能力，提供一站式、高智能、高精度、高稳定、高灵敏的整体化服务，为客户创造独一无二的设备运维体验及价值体验。</p>
+    </div>
+    <div class="strategy-card lift fade-in">
+    <span class="step">02</span>
+    <h4>全链路价值闭环</h4>
+    <p>贯穿"前置高灵敏检测、智能预警、全维度设备防护、降低非计划停机、缩减运维损耗、延长设备服役寿命、精细化控本增效"全流程，实现设备全生命周期的价值最大化。</p>
+            </div>
+            <div class="strategy-card lift fade-in">
+        <span class="step">03</span>
+                <h4>三维联动智能闭环</h4>
+                <p>打通物理净化、数字化智能、电气故障治理三层技术壁垒，所有数据汇入统一管理平台，引入大数据与 AI 模型，实现从数据采集到诊断决策再到执行反馈的真正预测性维护闭环。</p>
+   </div>
+        </div>
+        <div class="strategy-vision fade-in">
+     <div class="lbl">Core Vision · 核心愿景</div>
+            <p>以系统化思维重构设备运维逻辑，用技术创新驱动工业生产的长效稳定与成本优化，构建可持续的工业智能生态。</p>
+        </div>
+    </div>
+</section>
+
 <!-- ===== PRODUCTS ===== -->
-<section class="products" id="products">
+        <section class="products" id="products">
     <div class="section-inner">
         <div class="fade-in">
             <span class="section-tag">PRODUCTS</span>
@@ -1497,80 +2237,350 @@
     </div>
 </section>
 
-<!-- ===== ADVANTAGES ===== -->
-<section class="advantages" id="advantages">
+
+<!-- ===== HDS 深度解析 ===== -->
+<section class="hds" id="hds">
     <div class="section-inner">
-        <div class="fade-in">
-            <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">TECHNOLOGY & ADVANTAGES</span>
-            <h2 class="section-title">核心技术与优势</h2>
-            <p class="section-subtitle">以独创的"三平衡"理论与三位一体智能运维技术体系，重新定义工业设备运维标准</p>
+        <div class="sec-head fade-in">
+       <span class="section-tag">HDS TECHNOLOGY · 革命性带电检测</span>
+    <h2>高次谐波传动链 AI 诊断系统（HDS）</h2>
+   <p>一个革命性带电检测技术——无需停机断电，通过高次谐波多模量与成熟数据模型的对比分析，突破传统低频振动监测的检测盲区。</p>
+  </div>
+
+        <div class="hds-flow">
+         <div class="hds-step lift fade-in">
+  <div class="n">01</div>
+   <h4>信号采集</h4>
+          <p>采用特制非接触式传感器，直接在三相电缆表面进行测量，无需停机断电，完全不影响现场正常生产作业，保障设备连续运行。</p>
+  <span class="kw">非接触 · 带电作业</span>
+   </div>
+            <div class="hds-step lift fade-in">
+   <div class="n">02</div>
+                <h4>处理变换</h4>
+       <p>运用 FFT 快速傅里叶变换算法，将采集时域信号转化为频域信号，重点分析 <b>2～40 次</b>高次谐波特征。</p>
+                <span class="kw">FFT 频域变换</span>
+            </div>
+            <div class="hds-step lift fade-in">
+ <div class="n">03</div>
+                <h4>对比诊断</h4>
+  <p>将谐波特征与内置的<b>数万条设备典型故障数据库</b>模型智能比对，精准识别信号异常对应的设备故障类型。</p>
+         <span class="kw">数万条故障库</span>
+         </div>
+    <div class="hds-step lift fade-in">
+      <div class="n">04</div>
+                <h4>输出建议</h4>
+        <p>系统在 <b>1 秒</b>内自动生成诊断报告，明确指出故障具体位置、产生根本原因，并给出针对性的维修与优化策略。</p>
+<span class="kw">1 秒响应</span>
+   </div>
         </div>
-        <div class="adv-grid">
-            <div class="adv-card fade-in">
-                <span class="icon">⚖️</span>
-                <h4>产学研协同 + 自主知识产权</h4>
-                <p>长期校企联合研发，全系列自研硬件、算法与管控平台，持有自主专利与软件著作权，构建行业独有的技术壁垒</p>
+
+        <div class="fade-in">
+    <h3 style="font-size:clamp(20px,2.4vw,26px);margin-bottom:10px;">HDS vs 传统检测技术：超越维度的革命性突破</h3>
+  <p style="color:var(--text-light);font-size:14px;margin-bottom:26px;">传统振动 / 红外检测 vs HDS 高次谐波检测，四个核心维度全面对比</p>
+ </div>
+        <div class="cmp-wrap fade-in">
+        <table class="cmp-table">
+        <thead>
+        <tr>
+        <th scope="col">核心对比维度</th>
+      <th scope="col" class="hds-col">HDS 高次谐波检测技术</th>
+                <th scope="col">传统检测技术（振动 / 红外）</th>
+        </tr>
+        </thead>
+    <tbody>
+             <tr>
+ <th scope="row">检测方式</th>
+         <td class="hds-col">支持带电检测，非接触式作业，无需停电，不影响现场生产运行。</td>
+           <td>多为停电检测，或需要接触设备表面，操作流程繁琐，且影响设备正常使用。</td>
+       </tr>
+              <tr>
+           <th scope="row">故障识别能力</th>
+     <td class="hds-col">可精准捕捉设备内部早期潜在劣化征兆，实现故障的超前预警与干预。</td>
+          <td>敏感度较低，往往在故障特征明显显现，甚至设备发生故障停机后才能检测到问题。</td>
+      </tr>
+         <tr>
+              <th scope="row">诊断精度<br>&amp; 响应速度</th>
+           <td class="hds-col">
+   <div class="cmp-metric">
+    <span class="m">91% - 94.3%</span>
+      <span class="m">≈ 1 秒</span>
+         </div>
+        综合诊断精度可达 94.3%，全流程响应速度约 1 秒。
+        </td>
+         <td>
+         <div class="cmp-metric"><span class="m old">≈ 64%</span><span class="m old">数小时 ~ 数天</span></div>
+           传统振动 / 电流法精度约 64%；且数据分析需人工介入，整体响应耗时数小时至数天。
+         </td>
+        </tr>
+<tr>
+            <th scope="row">诊断范围<br>&amp; 投资回报</th>
+         <td class="hds-col">机电一体化同步诊断；年综合收益可达初期投资的 <b>3.8 倍</b>，经济效益显著。</td>
+      <td>通常仅能检测单一类型故障，且设备投入与人工成本高，投资回报周期长，效益不明显。</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div class="fade-in" style="margin-top:52px;">
+       <h3 style="font-size:clamp(20px,2.4vw,26px);margin-bottom:10px;">「传动链 + 并网侧」双核心监测</h3>
+            <p style="color:var(--text-light);font-size:14px;margin-bottom:4px;">以"传动链机械状态 + 并网侧电气质量"的双维度监测体系，构建风电场全生命周期的智能化安全防护网</p>
+        </div>
+        <div class="scene-grid">
+        <div class="scene-card lift fade-in">
+             <span class="tag">11-25 次高次谐波</span>
+    <h4>齿轮箱健康监测</h4>
+         <p>通过分析 11-25 次高次谐波特征，精准捕捉齿轮箱运行异常，有效解决传统振动检测方式误报率高、难以发现早期故障的行业痛点。</p>
+    <div class="hit">提前 <b>4-6 小时</b>识别早期磨损</div>
+        </div>
+    <div class="scene-card lift fade-in">
+      <span class="tag">THDu 畸变率监测</span>
+         <h4>变流器故障诊断</h4>
+                <p>实时监测变流器输出侧谐波畸变情况，快速预警 IGBT 模块劣化风险，同时联动 SVG 系统进行动态无功补偿与谐波治理，保障风机并网电能质量。</p>
+     <div class="hit">联动 <b>SVG</b> 动态调节</div>
             </div>
-            <div class="adv-card fade-in">
-                <span class="icon">🧠</span>
-                <h4>根源治理底层逻辑</h4>
-                <p>以润滑三角平衡理论为根基，阻断"污染物→添加剂损耗→油膜破损→设备磨损"恶性循环，治理效果长效稳定不反弹</p>
+            <div class="scene-card lift fade-in">
+                <span class="tag">3 / 5 次低次谐波</span>
+       <h4>发电机绝缘预警</h4>
+       <p>通过追踪 3、5 次低次谐波幅值的异常变化规律，在风机不停机、不解体的运行状态下，精准判断定子绕组老化、转子接地等绝缘隐患。</p>
+     <div class="hit">带电故障诊断，大幅降低<b>停机损失</b></div>
+         </div>
+      </div>
+    </div>
+</section>
+
+<!-- ===== BJT 设备展示 ===== -->
+<section class="bjt" id="bjt">
+    <div class="section-inner">
+      <div class="sec-head fade-in">
+     <span class="section-tag">TYPICAL EQUIPMENT · 典型设备</span>
+         <h2>BJT 系列在线净化系统</h2>
+      <p>一体化工业级高精度流体净化解决方案</p>
+        </div>
+     <div class="bjt-intro fade-in">
+  百捷通系列在线净化系统是专为工业复杂工况设计的核心设备，创新性地将<b style="color:var(--accent-light);">极化聚合器、电磁加热、涡流冷却、膜干燥管、回油无气泡缓释技术</b>与<b style="color:var(--accent-light);">超高真空脱水脱气技术</b>集成一体。设备采用模块化结构设计，可实现油液的在线循环净化，有效去除杂质、油泥、水分、酸值及气体，消除油中带电粒子团的局放。
+   </div>
+        <div class="bjt-grid">
+       <div class="bjt-gallery fade-in">
+      <div class="bjt-main">
+       <img id="bjtMainImg" src="images/sol-filter-unit.jpg" alt="BJT 系列在线净化系统" loading="lazy">
+          </div>
+         <div class="bjt-thumbs">
+        <div class="bjt-thumb active" data-img="images/sol-filter-unit.jpg" data-cap="BJT 风机智能在线精过滤与监测系统"><img src="images/sol-filter-unit.jpg" alt="风机智能在线精过滤与监测系统" loading="lazy"></div>
+    <div class="bjt-thumb" data-img="images/sol-filter-unit-2.jpg" data-cap="BJT 变压器在线净化系统"><img src="images/sol-filter-unit-2.jpg" alt="变压器在线净化系统" loading="lazy"></div>
+    <div class="bjt-thumb" data-img="images/sol-bjt-cabinet.jpg" data-cap="BJT 遥控履带式高精度快速净化系统"><img src="images/sol-bjt-cabinet.jpg" alt="遥控履带式高精度快速净化系统" loading="lazy"></div>
+    </div>
             </div>
-            <div class="adv-card fade-in">
-                <span class="icon">📈</span>
-                <h4>量化降本增效</h4>
-                <p>大幅降低齿轮箱百万级大修频次，削减非计划停机发电量损失，综合投资回报可达 3.8 倍</p>
+        <div class="bjt-list">
+                <div class="bjt-item lift">
+    <h4>多功能集成设计</h4>
+ <p>集精过滤、真空脱水、脱气功能于一身，一台设备即可解决油液污染多种核心问题，<b style="color:var(--accent-light);">无需多机串联</b>。</p>
+       </div>
+         <div class="bjt-item lift">
+            <h4>紧凑坚固的结构</h4>
+ <p>整机采用加厚钢材焊接，布局科学合理，占地面积小，能适应震动、粉尘多的工业现场，运行稳定可靠。</p>
+          </div>
+       <div class="bjt-item lift">
+    <h4>智能化在线运行</h4>
+<p><b style="color:var(--accent-light);">IP55 防护</b>，配备智能控制系统，可实时监控油液状态，支持无人值守自动运行，大幅降低人工操作的强度与误差。</p>
+       </div>
             </div>
-            <div class="adv-card fade-in">
-                <span class="icon">🏭</span>
-                <h4>全场景一站式交付</h4>
-                <p>IP55 工业防护，模块化紧凑设计；具备方案设计、设备供货、现场技改、数字化运维一体化交付能力</p>
+    </div>
+ </div>
+</section>
+
+<!-- ===== SOL ADVANTAGES（方案核心优势） ===== -->
+        <section class="advantages" id="advantages">
+        <div class="section-inner">
+        <div class="sec-head fade-in">
+            <span class="section-tag">WHY BEESOLON · 核心优势</span>
+       <h2>我们的核心优势</h2>
+            <p>技术、效果、运维、成本四条战线同时突破</p>
+        </div>
+        <div class="sol-adv-grid">
+    <div class="sol-adv lift fade-in">
+          <span class="n">01</span>
+   <span class="icon">🏅</span>
+                <h4>技术领先</h4>
+      <p>国内唯一实现全污染物深度<b style="color:var(--accent-dark);">纯物理净化</b>的技术体系，拥有多项核心发明专利，技术壁垒高，处于行业绝对领先地位。</p>
+    </div>
+          <div class="sol-adv lift fade-in">
+      <span class="n">02</span>
+    <span class="icon">📊</span>
+     <h4>效果显著</h4>
+       <p>经权威第三方机构严格检测，清洁度与脱水效果均达到行业领先水平，各项核心指标<b style="color:var(--accent-dark);">数据化呈现</b>，效果真实可量化。</p>
+</div>
+        <div class="sol-adv lift fade-in">
+   <span class="n">03</span>
+                <span class="icon">🤖</span>
+                <h4>智能运维</h4>
+   <p>结合 AI 智能诊断技术，实现设备状态的实时监控与故障预警，从被动维修转向<b style="color:var(--accent-dark);">预测性维护</b>，最大化提升设备可用率。</p>
+            </div>
+       <div class="sol-adv lift fade-in">
+<span class="n">04</span>
+                <span class="icon">💰</span>
+                <h4>成本最优</h4>
+      <p>通过技术优化与智能管理，大幅降低运营与维护成本，综合投资回报率（ROI）极高，长期经济效益远超传统处理方式。</p>
             </div>
         </div>
 
         <!-- Tech Showcase with real diagrams -->
         <div class="tech-showcase">
             <div class="tech-item fade-in">
-                <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
-                <h5>油品水分含量与轴承寿命关系</h5>
-                <div class="chart">
-                    <img src="images/tech-water-chart.jpg" alt="水分含量与轴承寿命对照表" loading="lazy">
-                </div>
-                <p>水分含量从 500ppm 降至 50ppm，轴承寿命可延长 3 倍以上（数据来源：Timken铁姆肯轴承实测）</p>
-            </div>
+  <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
+    <h5>油品水分含量与轴承寿命关系</h5>
+          <div class="chart">
+        <img src="images/tech-water-chart.jpg" alt="水分含量与轴承寿命对照表" loading="lazy">
+    </div>
+  <p>水分含量从 500ppm 降至 50ppm，轴承寿命可延长 3 倍以上（数据来源：Timken 铁姆肯轴承实测）</p>
+         </div>
             <div class="tech-item fade-in">
                 <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
-                <h5>油液污染度与设备寿命关系</h5>
-                <div class="chart">
-                    <img src="images/tech-life-chart.jpeg" alt="油液污染度与设备寿命">
-                </div>
-                <p>油品含水率深度净化至 25~100ppm，可大幅提升轴承剩余使用寿命（数据来源：Naria公司）</p>
+          <h5>油液污染度与设备寿命关系</h5>
+<div class="chart">
+   <img src="images/tech-life-chart.jpeg" alt="油液污染度与设备寿命">
+     </div>
+     <p>油品含水率深度净化至 25~100ppm，可大幅提升轴承剩余使用寿命（数据来源：Naria 公司）</p>
             </div>
-            <div class="tech-item fade-in">
-                <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
-                <h5>过滤精度与轴承寿命关系</h5>
-                <div class="chart">
-                    <img src="images/tech-filter-chart.jpeg" alt="过滤精度与轴承寿命">
-                </div>
-                <p>过滤器精度越高（3→12微米），轴承相对寿命提升越显著，从源头降低非计划停机</p>
-            </div>
-            <div class="tech-item fade-in">
-                <div class="label">系统架构 · SYSTEM ARCHITECTURE</div>
-                <h5>智能化运维系统流程</h5>
-                <div class="chart">
-                    <img src="images/tech-control-panel.jpg" alt="智能运维系统流程">
-                </div>
-                <p>变压器脱气脱水系统、智能化监控平台，让设备运行状态尽在掌握</p>
-            </div>
-            <div class="tech-item full fade-in">
-                <div class="label">系统流程 · SYSTEM FLOW</div>
-                <h5>风机齿轮箱智能运维系统油路</h5>
-                <div class="chart">
-                    <img src="images/tech-oil-diagram.png" alt="风机齿轮箱智能运维系统油路图" loading="lazy">
-                </div>
-                <p>实时监测风机齿轮箱油液状态，结合 AI 算法实现设备健康评估与预测性维护</p>
-            </div>
+ <div class="tech-item fade-in">
+           <div class="label">技术原理 · TECHNICAL PRINCIPLE</div>
+          <h5>过滤精度与轴承寿命关系</h5>
+ <div class="chart">
+            <img src="images/tech-filter-chart.jpeg" alt="过滤精度与轴承寿命">
         </div>
+           <p>过滤器精度越高（3→12微米），轴承相对寿命提升越显著，从源头降低非计划停机</p>
+            </div>
+            <div class="tech-item fade-in">
+         <div class="label">系统原理 · SYSTEM PRINCIPLE</div>
+          <h5>精过滤系统工艺原理</h5>
+                <div class="chart">
+          <img src="images/sol-tech-flow.png" alt="精过滤系统工艺原理图" loading="lazy">
+   </div>
+      <p>集成极化聚合技术、复合膜分离及中空纤维膜滤、表层精密拦截双重净化机制，精准截留微米级固体杂质与沉积油泥，实现游离水、乳化水、溶解水的三水快速脱除</p>
+  </div>
+  <div class="tech-item full fade-in">
+         <div class="label">系统流程 · SYSTEM FLOW</div>
+      <h5>变压器脱气脱水系统流程（PLC 中控界面）</h5>
+     <div class="chart">
+       <img src="images/sol-plc-hmi.png" alt="变压器脱气脱水系统PLC流程图" loading="lazy">
+          </div>
+  <p>油雾分离器 → 真空泵 → 罗茨真空泵 → 冷凝器 → 真空分离筒，实时显示真空度与温度，一体化智能集成架构让监测、管控、净化集成于一身</p>
+   </div>
+       <div class="tech-item fade-in">
+ <div class="label">系统架构 · SYSTEM ARCHITECTURE</div>
+  <h5>智能化运维系统流程</h5>
+    <div class="chart">
+ <img src="images/tech-control-panel.jpg" alt="智能运维系统流程">
+        </div>
+                <p>变压器脱气脱水系统、智能化监控平台，让设备运行状态尽在掌握</p>
+       </div>
+         <div class="tech-item fade-in">
+   <div class="label">油路设计 · OIL CIRCUIT</div>
+  <h5>风机齿轮箱智能运维系统油路</h5>
+      <div class="chart">
+              <img src="images/tech-oil-diagram.png" alt="风机齿轮箱智能运维系统油路图" loading="lazy">
+         </div>
+      <p>实时监测风机齿轮箱油液状态，结合 AI 算法实现设备健康评估与预测性维护</p>
+        </div>
+     </div>
+    </div>
+</section>
+
+<!-- ===== 价值主张 ===== -->
+        <section class="value" id="value">
+    <div class="section-inner">
+<div class="sec-head fade-in">
+     <span class="section-tag">VALUE PROPOSITION · 量化收益</span>
+         <h2>核心价值量化：基于科学机理的可观收益</h2>
+ <p>用可验证的数据说话，而不是空泛的承诺</p>
+        </div>
+        <div class="value-grid">
+       <div class="value-card lift fade-in">
+         <div class="v">1.5-2 倍</div>
+         <div class="k">延长油品寿命</div>
+          <div class="d">通过维持添加剂性能，避免因添加剂失效导致的提前换油</div>
+            </div>
+            <div class="value-card lift fade-in">
+ <div class="v">&gt;35%</div>
+  <div class="k">降低运维成本</div>
+                <div class="d">综合减少换油、大修及停机损失，避免过度过滤导致的添加剂浪费</div>
+            </div>
+<div class="value-card lift fade-in">
+         <div class="v">数倍</div>
+          <div class="k">提升设备寿命</div>
+       <div class="d">维持稳定有效的油膜保护，显著降低齿轮和轴承的磨损速率</div>
+   </div>
+<div class="value-card lift fade-in">
+                <div class="v">&lt;6 个月</div>
+            <div class="k">投资回收期</div>
+                <div class="d">以风电场景为例，投资回报周期极短</div>
+            </div>
+   </div>
+
+      <div class="viz-card fade-in">
+     <h4>油液污染度提升与设备寿命改变的对照表</h4>
+            <p class="cap">油液污染度（ISO 等级）每升高一级，设备寿命呈指数级下降。清洁度从 NAS 8 级恶化到 NAS 12 级时，液压系统、发动机及轴承等关键部件的寿命可能缩短 80% 以上。</p>
+            <div class="viz-wrap">
+            <table class="viz-table">
+        <thead>
+             <tr>
+  <th scope="col">原清洁度 → 精处理后</th>
+     <th scope="col">NAS 16/14/11</th>
+      <th scope="col">NAS 15/13/10</th>
+<th scope="col">NAS 14/12/9</th>
+          <th scope="col">NAS 13/11/8</th>
+   <th scope="col">NAS 12/10/7</th>
+</tr>
+        </thead>
+          <tbody>
+             <tr>
+           <th scope="row">油液污染度提升</th>
+           <td><span class="viz-cell" style="background:linear-gradient(135deg,#0d9488,#14b8a6);">1.3</span></td>
+ <td><span class="viz-cell" style="background:linear-gradient(135deg,#0d9488,#14b8a6);">1.5</span></td>
+       <td><span class="viz-cell" style="background:linear-gradient(135deg,#0d9488,#14b8a6);">1.8</span></td>
+     <td><span class="viz-cell" style="background:linear-gradient(135deg,#0891b2,#06b6d4);">2.5</span></td>
+ <td><span class="viz-cell" style="background:linear-gradient(135deg,#0369a1,#0ea5e9);">3</span></td>
+      </tr>
+      <tr>
+        <th scope="row">设备寿命倍数</th>
+         <td><span class="viz-cell" style="background:linear-gradient(135deg,#0369a1,#0ea5e9);">3</span></td>
+           <td><span class="viz-cell" style="background:linear-gradient(135deg,#075985,#0284c7);">3.5</span></td>
+      <td><span class="viz-cell" style="background:linear-gradient(135deg,#075985,#0284c7);">5</span></td>
+     <td><span class="viz-cell" style="background:linear-gradient(135deg,#0c4a6e,#0369a1);">7</span></td>
+             <td><span class="viz-cell" style="background:linear-gradient(135deg,#172554,#1e3a8a);">9</span></td>
+   </tr>
+    <tr>
+           <th scope="row">过滤精度放宽</th>
+   <td><span class="viz-cell" style="background:linear-gradient(135deg,#b45309,#d97706);">1.05</span></td>
+     <td><span class="viz-cell" style="background:linear-gradient(135deg,#c2410c,#ea580c);">1.3</span></td>
+           <td><span class="viz-cell" style="background:linear-gradient(135deg,#dc2626,#ef4444);">1.7</span></td>
+  <td><span class="viz-cell" style="background:linear-gradient(135deg,#b91c1c,#dc2626);">2.5</span></td>
+      <td><span class="viz-cell" style="background:linear-gradient(135deg,#991b1b,#b91c1c);">4</span></td>
+                </tr>
+       </tbody>
+       </table>
+          </div>
+       <div class="viz-src">
+             数据来源于：美国专业润滑与分析公司 Naria；Timken（铁姆肯）轴承实测数据。<br>
+  所述寿命倍数值，系指设备运行润滑油<b>未经处理时的实际设备寿命值</b>的倍数，而非设计值的倍数。<br>
+            水分含量从 500ppm 降至 50ppm，轴承寿命延长 3 倍以上；含水率由超标数百 ppm 深度净化至 25~100ppm，可大幅提升轴承剩余使用寿命，抑制油品乳化、金属锈蚀与润滑油膜失效。
+          </div>
+        </div>
+
+      <div class="roi-box fade-in">
+            <div class="roi-item">
+           <div class="lbl">单台风机年均节约成本</div>
+      <div class="val">约 <span>6.7</span> 万元</div>
+</div>
+            <div class="roi-item">
+       <div class="lbl">预计投资回收期</div>
+           <div class="val">小于 <span>6</span> 个月</div>
+       </div>
+            <div class="roi-item">
+    <div class="lbl">HDS 年综合收益</div>
+  <div class="val">达投资 <span>3.8</span> 倍</div>
+      </div>
+          </div>
+        <p class="roi-cond">测算条件：某主流 2.X MW 风机，度电售价 0.35 元，年利用小时数 2500 小时。</p>
     </div>
 </section>
 
@@ -1837,36 +2847,39 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <img src="images/logo.png" alt="中电智为">
-                <h4>中电智为（北京）科技有限公司</h4>
-                <p>百捷通 · 工业设备全生命周期智能运维解决方案。<br>品质源于专注，性能源于创新。</p>
+     <h4>中电智为（北京）科技有限公司</h4>
+          <p>百捷通 · 工业设备全生命周期智能运维解决方案。<br>品质源于专注，性能源于创新。</p>
+    </div>
+            <div class="footer-col">
+           <h5>快速导航</h5>
+       <ul>
+    <li><a href="#about">关于我们</a></li>
+          <li><a href="#balance">三平衡理论</a></li>
+        <li><a href="#products">产品中心</a></li>
+             <li><a href="#hds">HDS 技术</a></li>
+ <li><a href="#value">价值量化</a></li>
+          <li><a href="#cases">标杆案例</a></li>
+           </ul>
+    </div>
+            <div class="footer-col">
+   <h5>解决方案</h5>
+            <ul>
+  <li><a href="#painpoints">行业痛点</a></li>
+  <li><a href="#strategy">战略蓝图</a></li>
+         <li><a href="#bjt">BJT 设备</a></li>
+     <li><a href="#advantages">核心优势</a></li>
+     <li><a href="#partners">合作伙伴</a></li>
+  <li><a href="recruit.html">官方招聘</a></li>
+      </ul>
             </div>
             <div class="footer-col">
-                <h5>快速导航</h5>
-                <ul>
-                    <li><a href="#about">关于我们</a></li>
-                    <li><a href="#products">产品中心</a></li>
-                    <li><a href="#advantages">技术优势</a></li>
-                    <li><a href="#partners">合作伙伴</a></li>
-                    <li><a href="recruit.html">官方招聘</a></li>
-                    <li><a href="#contact">商业合作</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>商业合作</h5>
-                <ul>
-                    <li><a href="#cooperation">商务模式</a></li>
-                    <li><a href="#impl">实施路径</a></li>
-                    <li><a href="#cases">标杆案例</a></li>
-                    <li><a href="#contact">商业合作</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>联系方式</h5>
-                <ul>
-                    <li><a href="#contact">电话：18911372766</a></li>
-                    <li><a href="recruit.html">邮箱：5949869@QQ.com</a></li>
-                    <li><a href="#contact">地址：昆明盘龙区双龙青香园</a></li>
-                </ul>
+    <h5>联系方式</h5>
+         <ul>
+        <li><a href="#contact">电话：18911372766</a></li>
+             <li><a href="#contact">邮箱：5949869@QQ.com</a></li>
+          <li><a href="#contact">地址：昆明盘龙区双龙青香园</a></li>
+       <li><a href="#cooperation">商务合作模式</a></li>
+    </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1875,6 +2888,9 @@
         </div>
     </div>
 </footer>
+
+<!-- ===== 返回顶部 ===== -->
+<button class="to-top" id="toTop" aria-label="返回顶部">↑</button>
 
 <!-- ===== LIGHTBOX ===== -->
 <div class="lightbox" id="lightbox">
@@ -1910,18 +2926,69 @@
         });
     });
 
-    // ===== Scroll Effects =====
+    // ===== Scroll Effects（导航阴影 + 进度条 + 返回顶部） =====
     const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
+    const scrollProgress = document.getElementById('scrollProgress');
+    const toTop = document.getElementById('toTop');
     window.addEventListener('scroll', () => {
         const current = window.scrollY;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
         if (current > 80) {
             navbar.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+       navbar.classList.remove('scrolled');
         }
-        lastScroll = current;
-    });
+        if (scrollProgress) {
+        scrollProgress.style.width = (max > 0 ? (current / max) * 100 : 0) + '%';
+        }
+        if (toTop) {
+            toTop.classList.toggle('show', current > 520);
+        }
+    }, { passive: true });
+
+    if (toTop) {
+        toTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ===== 导航高亮（当前所在区块） =====
+    (function() {
+const links = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+const map = new Map();
+  links.forEach(a => {
+   const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+      if (el) map.set(el, a);
+        });
+        if (!map.size) return;
+      const spy = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+       const a = map.get(e.target);
+     if (!a) return;
+        if (e.isIntersecting) {
+        links.forEach(x => x.classList.remove('active'));
+            a.classList.add('active');
+   }
+      });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        map.forEach((a, el) => spy.observe(el));
+})();
+
+    // ===== BJT 设备图库切换 =====
+    (function() {
+        const main = document.getElementById('bjtMainImg');
+        const thumbs = document.querySelectorAll('.bjt-thumb');
+        if (!main || !thumbs.length) return;
+        thumbs.forEach(th => {
+      th.addEventListener('click', () => {
+          thumbs.forEach(x => x.classList.remove('active'));
+    th.classList.add('active');
+  main.src = th.dataset.img;
+              main.alt = th.dataset.cap || '';
+   });
+        });
+})();
 
     // ===== Lightbox =====
     const lightbox = document.getElementById('lightbox');
@@ -1930,19 +2997,19 @@
     const lightboxClose = document.getElementById('lightboxClose');
 
     // Product card images that can be clicked
-    document.querySelectorAll('.product-image img, .site-card img, .tech-item .chart img').forEach(img => {
+    document.querySelectorAll('.product-image img, .site-card img, .tech-item .chart img, .bjt-main img').forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', function(e) {
-            e.stopPropagation();
-            lightboxImg.src = this.src;
+       e.stopPropagation();
+        lightboxImg.src = this.src;
             const alt = this.getAttribute('alt') || '';
-            const parent = this.closest('.product-body, .site-card-body, .tech-item');
-            const title = parent ? parent.querySelector('h4, h5') : null;
+        const parent = this.closest('.product-body, .site-card-body, .tech-item, .bjt-gallery');
+ const title = parent ? parent.querySelector('h4, h5') : null;
             const caption = title ? title.textContent : alt;
-            lightboxCaption.textContent = caption;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+          lightboxCaption.textContent = caption;
+ lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+     });
     });
 
     // Close on clicking overlay or close button
