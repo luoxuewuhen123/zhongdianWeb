@@ -367,6 +367,8 @@
 
         /* ===== Section Base ===== */
         section { padding: 100px 24px; }
+        /* 固定导航高度 72px：锚点跳转时留出让位，避免标题被导航遮住 */
+        section[id], .hero[id] { scroll-margin-top: 72px; }
         .section-inner {
             max-width: 1240px;
             margin: 0 auto;
@@ -2193,7 +2195,7 @@
             </div>
             <div class="product-card fade-in">
                 <div class="product-image">
-                    <img src="images/tech-control-panel.jpg" alt="润滑油在线AI监测系统" loading="lazy">
+                    <img src="images/sol-monitor-dashboard.jpg" alt="润滑油在线AI监测系统 - 远程终端实时数据" loading="lazy">
                 </div>
                 <div class="product-body">
                     <h4>润滑油在线AI监测系统</h4>
@@ -2457,7 +2459,7 @@
    </div>
       <p>集成极化聚合技术、复合膜分离及中空纤维膜滤、表层精密拦截双重净化机制，精准截留微米级固体杂质与沉积油泥，实现游离水、乳化水、溶解水的三水快速脱除</p>
   </div>
-  <div class="tech-item full fade-in">
+            <div class="tech-item full fade-in">
          <div class="label">系统流程 · SYSTEM FLOW</div>
       <h5>变压器脱气脱水系统流程（PLC 中控界面）</h5>
      <div class="chart">
@@ -2466,21 +2468,32 @@
   <p>油雾分离器 → 真空泵 → 罗茨真空泵 → 冷凝器 → 真空分离筒，实时显示真空度与温度，一体化智能集成架构让监测、管控、净化集成于一身</p>
    </div>
        <div class="tech-item fade-in">
- <div class="label">系统架构 · SYSTEM ARCHITECTURE</div>
-  <h5>智能化运维系统流程</h5>
-    <div class="chart">
- <img src="images/tech-control-panel.jpg" alt="智能运维系统流程">
-        </div>
-                <p>变压器脱气脱水系统、智能化监控平台，让设备运行状态尽在掌握</p>
-       </div>
-         <div class="tech-item fade-in">
-   <div class="label">油路设计 · OIL CIRCUIT</div>
+ <div class="label">油路设计 · OIL CIRCUIT</div>
   <h5>风机齿轮箱智能运维系统油路</h5>
       <div class="chart">
               <img src="images/tech-oil-diagram.png" alt="风机齿轮箱智能运维系统油路图" loading="lazy">
          </div>
       <p>实时监测风机齿轮箱油液状态，结合 AI 算法实现设备健康评估与预测性维护</p>
         </div>
+        <div class="tech-item fade-in">
+   <div class="label">净化工艺 · PURIFICATION PROCESS</div>
+   <h5>三重净化机制与三水快速脱除</h5>
+       <div class="chart" style="flex-direction:column;gap:10px;align-items:stretch;justify-content:center">
+    <div style="background:#fff;border:1px solid #e8edf2;border-radius:10px;padding:12px 14px">
+    <div style="font-size:13px;font-weight:700;color:var(--accent-dark);margin-bottom:4px">① 极化聚合器 · 复合膜分离 · 中空纤维膜滤</div>
+          <div style="font-size:12px;color:var(--text-light);line-height:1.7">精准截留油液微米级固体杂质与沉积油泥</div>
+            </div>
+          <div style="background:#fff;border:1px solid #e8edf2;border-radius:10px;padding:12px 14px">
+    <div style="font-size:13px;font-weight:700;color:var(--accent-dark);margin-bottom:4px">② 表层精密拦截 · 游离水 / 乳化水 / 溶解水</div>
+       <div style="font-size:12px;color:var(--text-light);line-height:1.7">实现"三水"快速脱除，同时优化润滑油成膜质量与油膜承载效能</div>
+   </div>
+   <div style="background:#fff;border:1px solid #e8edf2;border-radius:10px;padding:12px 14px">
+   <div style="font-size:13px;font-weight:700;color:var(--accent-dark);margin-bottom:4px">③ 超高真空降压沸 · 溶解气充分逸出</div>
+   <div style="font-size:12px;color:var(--text-light);line-height:1.7">辅以高效冷凝回收装置，高效除水脱气，快速修复油品原有品质</div>
+            </div>
+    </div>
+      <p>在提升油液洁净等级、降低微量水分含量的同时，筑牢设备润滑防护体系，保障动力、变电、传动类设备长期平稳运行</p>
+      </div>
      </div>
     </div>
 </section>
@@ -2593,20 +2606,34 @@
             <p class="section-subtitle">真实落地项目 · 风电场智能运维改造实例</p>
         </div>
         <div class="site-grid">
+    <div class="site-card fade-in">
+ <img src="images/sol-gearbox-oil.jpg" alt="风电场齿轮箱油液现场">
+          <div class="site-card-body">
+          <h4>风电场齿轮箱油液治理现场</h4>
+    <p>百捷通精过滤系统部署于风机齿轮箱旁，对油液进行在线深度净化，将清洁度稳定控制在 NAS 6-8 黄金区间，阻断"污染-失效-磨损"恶性循环。</p>
+      </div>
+         </div>
             <div class="site-card fade-in">
-                <img src="images/site-boxtransformer.jpeg" alt="风电场箱变现场">
+         <img src="images/sol-boxtransformer.jpg" alt="美式箱变深度治理现场">
                 <div class="site-card-body">
-                    <h4>风电场箱变现场</h4>
-                    <p>百捷通精过滤系统部署于风电场美式箱变旁，对箱变油液进行在线深度净化，有效解决底部游离水与颗粒污染问题。</p>
-                </div>
-            </div>
+              <h4>美式箱变深度治理现场</h4>
+        <p>针对箱变底部沉积游离水、油泥淤积、微水超标等顽疾实施六维深度治理，杜绝潮湿短路与放电跳闸，设备工况可稳定维持 3～5 年无故障反弹。</p>
+       </div>
+    </div>
             <div class="site-card fade-in">
-                <img src="images/site-boxtransformer2.jpg" alt="箱变精细化管理">
-                <div class="site-card-body">
-                    <h4>箱变精细化管理</h4>
-                    <p>通过加装智能化监测设备，对箱变运行状态进行 7×24 小时实时监控，提前预警各类潜在故障风险。</p>
-                </div>
+    <img src="images/site-boxtransformer.jpeg" alt="风电场箱变现场">
+  <div class="site-card-body">
+        <h4>风电场箱变现场</h4>
+          <p>百捷通精过滤系统部署于风电场美式箱变旁，对箱变油液进行在线深度净化，有效解决底部游离水与颗粒污染问题。</p>
+         </div>
             </div>
+   <div class="site-card fade-in">
+           <img src="images/site-boxtransformer2.jpg" alt="箱变精细化管理">
+       <div class="site-card-body">
+      <h4>箱变精细化管理</h4>
+          <p>通过加装智能化监测设备，对箱变运行状态进行 7×24 小时实时监控，提前预警各类潜在故障风险。</p>
+  </div>
+     </div>
         </div>
     </div>
 </section>
@@ -3029,24 +3056,42 @@ const map = new Map();
     });
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
+  if (entry.isIntersecting) {
+     entry.target.classList.add('visible');
+       }
+   });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     });
 
-    // ===== Smooth reveal on load =====
+  // ===== Smooth reveal on load =====
     window.addEventListener('load', () => {
         document.querySelectorAll('.fade-in').forEach(el => {
-            if (el.getBoundingClientRect().top < window.innerHeight) {
-                el.classList.add('visible');
-            }
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+    el.classList.add('visible');
+   }
         });
     });
+
+    // ===== 兜底：若 JS 异常/不支持 IntersectionObserver，3 秒后强制显示全部内容 =====
+    (function() {
+        function revealAll() {
+        document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+        }
+        if (!('IntersectionObserver' in window)) {
+         revealAll();
+   return;
+        }
+        setTimeout(function() {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+   const r = el.getBoundingClientRect();
+       // 已经滚过视口上方或当前在视口内却没显示 → 补上
+          if (r.top < window.innerHeight && r.bottom > 0) revealAll();
+            });
+  }, 3000);
+    })();
 </script>
 </body>
 </html>
