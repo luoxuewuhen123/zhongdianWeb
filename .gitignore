@@ -1,0 +1,8 @@
+# 依赖与构建产物（帽子云容器里会自行 npm install，无需入库）
+node_modules/
+build/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.log
