@@ -680,10 +680,10 @@
         .site-showcase .section-subtitle { color: rgba(255,255,255,0.6); }
         .site-showcase .section-tag { border-color: var(--accent); color: var(--accent-light); }
         .site-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+        position: relative;
             z-index: 1;
         }
         .site-card {
@@ -745,10 +745,13 @@
 
         /* ===== Cases ===== */
         .cases { background: var(--bg-light); }
+        /* 单案例卡：横向铺满，避免右侧留白 */
         .case-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 32px;
+            max-width: 860px;
+            margin: 0 auto;
         }
         .case-card {
             background: #fff;
@@ -1158,6 +1161,75 @@
         /* 卡片统一浮起效果 */
         .lift { transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s, border-color .35s, background .35s; }
         .lift:hover { transform: translateY(-6px); }
+
+        /* ---- 产品卡内的引导链接 ---- */
+        .product-more {
+         display: inline-block;
+margin-top: 14px;
+   font-size: 13px;
+         font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+      border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+         transition: color .25s;
+        }
+        .product-more:hover { color: var(--accent-light); }
+
+        /* ---- 案例区：证言 + 引导 ---- */
+.case-quote {
+       margin-top: 24px;
+            padding: 20px 24px;
+      background: rgba(0,168,168,.06);
+      border-left: 3px solid var(--accent);
+        border-radius: 0 10px 10px 0;
+   font-size: 14px;
+    color: var(--text);
+line-height: 1.85;
+            font-style: italic;
+        }
+      .case-quote cite {
+    display: block;
+    margin-top: 8px;
+       font-size: 12.5px;
+    color: var(--text-light);
+   font-style: normal;
+        }
+ .case-link {
+            margin-top: 26px;
+    text-align: center;
+     font-size: 14px;
+    color: var(--text-light);
+        }
+.case-link a {
+       color: var(--accent-dark);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .case-link b { color: var(--accent-dark); }
+
+        /* ---- 痛点区：双栏双设备 ---- */
+        .pain-grid-2 {
+            display: grid;
+ grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+        .pain-grid-2 .pain-card { padding: 36px 32px; }
+        .pain-grid-2 .pain-card p { font-size: 14px; line-height: 1.85; }
+        .pain-grid-2 .pain-card b { color: var(--accent-dark); font-weight: 700; }
+        .pain-note {
+            margin-top: 26px;
+    background: #fff;
+ border-left: 4px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+    padding: 20px 26px;
+      font-size: 14px;
+            color: var(--text-light);
+       line-height: 1.85;
+            box-shadow: var(--shadow-sm);
+        }
+        .pain-note b { color: var(--primary); }
 
         /* ---- 1. 三平衡理论 ---- */
         .balance { background: #fff; }
@@ -1744,7 +1816,10 @@
             .value-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
         }
         @media (max-width: 768px) {
-            .sec-head { margin-bottom: 36px; }
+        .pain-grid-2 { grid-template-columns: 1fr; gap: 14px; }
+        .pain-grid-2 .pain-card { padding: 26px 22px; }
+            .pain-note { padding: 16px 18px; font-size: 13px; }
+      .sec-head { margin-bottom: 36px; }
             .sec-head h2 { font-size: 23px; }
             .sec-head p { font-size: 13.5px; }
             .balance-card { padding: 28px 22px; text-align: left; }
@@ -1994,22 +2069,22 @@
             <a href="#contact" class="btn btn-outline">商业合作</a>
         </div>
         <div class="hero-stats">
-            <div class="hero-stat">
-                <div class="num"><span class="accent-text">80</span>%</div>
-                <div class="label">齿轮箱故障源于油液污染</div>
-            </div>
-            <div class="hero-stat">
-                <div class="num"><span class="accent-text">6.7</span>万</div>
-                <div class="label">单台风机年均节约成本</div>
-            </div>
-            <div class="hero-stat">
-                <div class="num">&lt;<span class="accent-text">6</span>月</div>
+      <div class="hero-stat">
+    <div class="num"><span class="accent-text">35</span>%</div>
+       <div class="label">非计划停机源于齿轮箱故障</div>
+   </div>
+    <div class="hero-stat">
+      <div class="num"><span class="accent-text">94.3</span>%</div>
+   <div class="label">HDS 故障识别准确率</div>
+   </div>
+     <div class="hero-stat">
+         <div class="num">&lt;<span class="accent-text">6</span>月</div>
                 <div class="label">预计投资回收期</div>
-            </div>
-            <div class="hero-stat">
+    </div>
+       <div class="hero-stat">
                 <div class="num"><span class="accent-text">9</span>+</div>
-                <div class="label">行业头部合作伙伴</div>
-            </div>
+        <div class="label">行业头部合作伙伴</div>
+   </div>
         </div>
     </div>
 </section>
@@ -2065,22 +2140,20 @@
             <h2 class="section-title">直面工业运维核心痛点</h2>
             <p class="section-subtitle">深入剖析制约生产效率与经济效益的关键因素，探寻破局方向</p>
         </div>
-        <div class="pain-grid">
+        <div class="pain-grid pain-grid-2">
             <div class="pain-card fade-in">
                 <span class="icon">🛑</span>
-                <h4>非计划停机的"隐形杀手"</h4>
-                <p>风机齿轮箱故障占风机总停机时长的35%，单次大修费用高达158~314万元。80%的齿轮箱故障源于润滑油污染，传统粗放式运维无法预警。</p>
+                <h4>风电齿轮箱：故障的"隐形杀手"</h4>
+                <p>欧美风机齿轮箱制造商报告显示，35% 的计划外停机源于齿轮箱故障，其中 80% 诱因为润滑油污染。单次大修费用高达 <b>158~314 万元</b>，严重侵蚀风场利润。</p>
             </div>
             <div class="pain-card fade-in">
                 <span class="icon">⚡</span>
-                <h4>美式箱变的"安全顽疾"</h4>
-                <p>油务缺陷、本体故障、密封隐患、散热不良等多重问题叠加。油中颗粒污染严重（NAS 12级以上），底部游离水沉积多达数十公斤，传统滤油治标不治本。</p>
+                <h4>美式箱变：反复故障的"安全顽疾"</h4>
+                <p>运行多年后油质劣化、油泥淤积，氢气乙炔总烃超标；分接开关触头氧化卡涩、铁芯多点接地；密封件老化进水，油箱底部游离水沉积多达数十公斤，污染级别常突破 <b>NAS 12</b>。</p>
             </div>
-            <div class="pain-card fade-in">
-                <span class="icon">🔄</span>
-                <h4>恶性循环的"运维困局"</h4>
-                <p>污染物消耗添加剂 → 油膜破损 → 金属直接摩擦 → 新生磨屑加剧污染 → 添加剂继续损耗，形成加速损伤闭环。传统运维陷入"重复滤油、反复超标"的死循环。</p>
-            </div>
+        </div>
+        <div class="pain-note fade-in">
+            <b>共同根源：</b>传统治理治标不治本——滤油后指标短时间改善又迅速反弹，陷入"重复滤油、反复超标"的运维困局。这背后的机理，下一节给出答案。
         </div>
     </div>
 </section>
@@ -2141,7 +2214,7 @@
         <div class="sec-head fade-in">
             <span class="section-tag">STRATEGY · 战略蓝图</span>
             <h2>百捷通的一体化智能运维哲学</h2>
-            <p>不卖单台设备，卖一套从源头防护到智能治理的系统性价值服务。</p>
+            <p>四位一体：源头防护 → 实时监测 → 早期预警 → 长效管控。</p>
     </div>
         <div class="strategy-lead fade-in">
             打造<b>「过滤净化 + 油品监测 + 高次谐波传动链检测」</b>与 <b>AI 多维度深度融合</b>的三位一体设备全生命周期智能运维解决方案，为工业设备提供从源头防护到智能治理的系统性价值服务。
@@ -2219,6 +2292,7 @@
                         <li>准确率 94.3%，提前 4-6 小时预警</li>
                         <li>兼顾传动链 + 并网侧双重防护</li>
                     </ul>
+      <a class="product-more" href="#hds">查看 HDS 技术原理与对比详情 →</a>
                 </div>
             </div>
             <div class="product-card fade-in">
@@ -2246,7 +2320,7 @@
         <div class="sec-head fade-in">
        <span class="section-tag">HDS TECHNOLOGY · 革命性带电检测</span>
     <h2>高次谐波传动链 AI 诊断系统（HDS）</h2>
-   <p>一个革命性带电检测技术——无需停机断电，通过高次谐波多模量与成熟数据模型的对比分析，突破传统低频振动监测的检测盲区。</p>
+   <p>产品③ 的完整技术链路：从信号采集到诊断输出全过程带电完成，突破传统低频振动监测的检测盲区。</p>
   </div>
 
         <div class="hds-flow">
@@ -2504,7 +2578,7 @@
 <div class="sec-head fade-in">
      <span class="section-tag">VALUE PROPOSITION · 量化收益</span>
          <h2>核心价值量化：基于科学机理的可观收益</h2>
- <p>用可验证的数据说话，而不是空泛的承诺</p>
+ <p>每一项收益都有第三方数据或现场实测支撑</p>
         </div>
         <div class="value-grid">
        <div class="value-card lift fade-in">
@@ -2602,95 +2676,71 @@
     <div class="section-inner">
         <div class="fade-in">
             <span class="section-tag">FIELD PROJECTS</span>
-            <h2 class="section-title">应用现场</h2>
+    <h2 class="section-title">应用现场</h2>
             <p class="section-subtitle">真实落地项目 · 风电场智能运维改造实例</p>
         </div>
         <div class="site-grid">
-    <div class="site-card fade-in">
- <img src="images/sol-gearbox-oil.jpg" alt="风电场齿轮箱油液现场">
-          <div class="site-card-body">
-          <h4>风电场齿轮箱油液治理现场</h4>
-    <p>百捷通精过滤系统部署于风机齿轮箱旁，对油液进行在线深度净化，将清洁度稳定控制在 NAS 6-8 黄金区间，阻断"污染-失效-磨损"恶性循环。</p>
-      </div>
-         </div>
-            <div class="site-card fade-in">
-         <img src="images/sol-boxtransformer.jpg" alt="美式箱变深度治理现场">
-                <div class="site-card-body">
-              <h4>美式箱变深度治理现场</h4>
-        <p>针对箱变底部沉积游离水、油泥淤积、微水超标等顽疾实施六维深度治理，杜绝潮湿短路与放电跳闸，设备工况可稳定维持 3～5 年无故障反弹。</p>
-       </div>
+ <div class="site-card fade-in">
+            <img src="images/sol-bjt-cabinet.jpg" alt="风电场在线净化系统安装现场">
+ <div class="site-card-body">
+           <h4>风机齿轮箱旁在线净化系统</h4>
+            <p>设备就地安装于风机齿轮箱旁，实现不停机在线净化，实测油液清洁度稳定控制在 NAS 6-8 黄金区间。</p>
+     </div>
     </div>
             <div class="site-card fade-in">
-    <img src="images/site-boxtransformer.jpeg" alt="风电场箱变现场">
-  <div class="site-card-body">
-        <h4>风电场箱变现场</h4>
-          <p>百捷通精过滤系统部署于风电场美式箱变旁，对箱变油液进行在线深度净化，有效解决底部游离水与颗粒污染问题。</p>
-         </div>
+            <img src="images/sol-boxtransformer.jpg" alt="美式箱变深度治理现场">
+           <div class="site-card-body">
+<h4>美式箱变六维深度治理</h4>
+    <p>实施六维深度治理后，箱变工况稳定维持 3～5 年无故障反弹，杜绝潮湿短路与放电跳闸。</p>
+       </div>
             </div>
-   <div class="site-card fade-in">
-           <img src="images/site-boxtransformer2.jpg" alt="箱变精细化管理">
-       <div class="site-card-body">
-      <h4>箱变精细化管理</h4>
-          <p>通过加装智能化监测设备，对箱变运行状态进行 7×24 小时实时监控，提前预警各类潜在故障风险。</p>
-  </div>
-     </div>
+         <div class="site-card fade-in">
+                <img src="images/site-boxtransformer2.jpg" alt="箱变在线监测与精细化管理">
+    <div class="site-card-body">
+<h4>箱变运行状态在线监测</h4>
+          <p>加装智能化监测模块，对箱变运行状态进行 7×24 小时实时监控与早期预警。</p>
+</div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- ===== CASES ===== -->
 <section class="cases" id="cases">
-    <div class="section-inner">
+  <div class="section-inner">
         <div class="fade-in">
             <span class="section-tag" style="display:block;width:fit-content;margin:0 auto 16px;">CASE STUDIES</span>
-            <h2 class="section-title">标杆案例</h2>
-            <p class="section-subtitle">头部企业的信赖之选——用真实成果说话</p>
-        </div>
+     <h2 class="section-title">标杆案例</h2>
+          <p class="section-subtitle">头部企业的信赖之选——用真实成果说话</p>
+</div>
         <div class="case-grid">
-            <div class="case-card fade-in">
-                <div class="case-body">
-                    <span class="case-tag">国家能源集团 · 某风电场</span>
-                    <h4>精过滤系统 + AI诊断系统 部署项目</h4>
-                    <p>在10台风机上完成"精过滤系统+AI诊断系统"安装部署，稳定运行超过12个月。成功预警2起早期轴承异常，避免了严重的齿轮箱故障。</p>
-                    <div class="case-results">
-                        <div class="case-result-item">
-                            <div class="val">NAS 5</div>
-                            <div class="lbl">油液清洁度</div>
-                        </div>
-                        <div class="case-result-item">
-                            <div class="val">2 起</div>
-                            <div class="lbl">早期预警成功</div>
-                        </div>
-                        <div class="case-result-item">
-                            <div class="val">12+ 月</div>
-                            <div class="lbl">稳定运行</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="case-card fade-in">
-                <div class="case-body">
-                    <span class="case-tag">风电场综合效益提升</span>
-                    <h4>量化收益，驱动商业成功</h4>
-                    <p>根据某主流2.X MW风机实测数据，百捷通智能运维方案为单台风机年均节约成本约6.7万元，预计投资回收期小于6个月。</p>
-                    <div class="case-results">
-                        <div class="case-result-item">
-                            <div class="val">6.7 万</div>
-                            <div class="lbl">单台年均节约</div>
-                        </div>
-                        <div class="case-result-item">
-                            <div class="val">&lt;6 月</div>
-                            <div class="lbl">投资回收期</div>
-                        </div>
-                        <div class="case-result-item">
-                            <div class="val">3 倍</div>
-                            <div class="lbl">轴承寿命延长</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="case-card fade-in">
+<div class="case-body">
+       <span class="case-tag">国家能源集团 · 某风电场</span>
+    <h4>精过滤系统 + AI 诊断系统部署项目</h4>
+        <p>已在 10 台风机上完成"精过滤系统 + AI 诊断系统"安装部署，稳定运行超过 12 个月。与同场未安装设备相比，振动烈度显著降低，发电量稳中有升。</p>
+          <div class="case-results">
+        <div class="case-result-item">
+     <div class="val">NAS 5</div>
+            <div class="lbl">油液清洁度</div>
     </div>
+                <div class="case-result-item">
+          <div class="val">2 起</div>
+  <div class="lbl">早期预警成功</div>
+          </div>
+          <div class="case-result-item">
+          <div class="val">12+ 月</div>
+                <div class="lbl">稳定运行</div>
+  </div>
+    </div>
+        <blockquote class="case-quote">"百捷通系统让我们对风机的健康状况了如指掌，运维工作更有针对性，也更安心。"<br><cite>—— 某风电场场长</cite></blockquote>
+  </div>
+       </div>
+     </div>
+        <div class="case-link fade-in">
+            该方案的完整收益测算见 <a href="#value">价值量化</a>：单台风机年均节约成本约 <b>6.7 万元</b>，投资回收期小于 <b>6 个月</b>。
+    </div>
+</div>
 </section>
 
 <!-- ===== IMPLEMENTATION ===== -->
